@@ -1,0 +1,9 @@
+@import url("styles/reset.css");
+@import url("styles/site.css");
+@import url("styles/action-container.css");
+@import url("styles/buttons.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");

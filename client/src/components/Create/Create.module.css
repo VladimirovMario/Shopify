@@ -1,0 +1,99 @@
+/* .action-container {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+  margin-bottom: 64px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+
+  border-radius: 6px;
+  background-color: var(--clr-white);
+  box-shadow: -2px -1px 12px 1px var(--clr-pirate-gold);
+  overflow: hidden;
+  padding: 24px 32px;
+} */
+
+.edit-img-wrapper {
+  min-height: 100%;
+  max-width: 30%;
+}
+
+.create-edit-img {
+  height: 100%;
+  width: auto;
+  object-position: center center;
+}
+
+.form-container {
+  width: 70%;
+}
+
+.form-container-title {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.form-container-title,
+.form-container-desc {
+  text-align: center;
+}
+
+.delete-title {
+  color: var(--clr-danger);
+}
+
+.form-container-desc {
+  margin-bottom: 12px;
+}
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  gap: 12px;
+}
+
+.rows-aligned {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.input-label {
+  display: block;
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+
+.error-message {
+  color: var(--clr-danger);
+}
+
+.input-title,
+.input-genre,
+.input-price,
+.input-img-url {
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid var(--clr-abbey);
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* Text area */
+.align-center {
+  place-self: center;
+}
+
+.description {
+  resize: none;
+  background-color: transparent;
+  border: 1px solid var(--clr-abbey);
+  padding: 6px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}

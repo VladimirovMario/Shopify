@@ -1,0 +1,58 @@
+.register {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-img-wrapper,
+.login-img-wrapper {
+  width: 40%;
+  aspect-ratio: 1/1;
+}
+
+.register-img,
+.login-img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.register-form,
+.login-form {
+  width: 60%;
+}
+
+.form-container-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.input-register,
+.input-login {
+  margin: 0 auto;
+  max-width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.email,
+.username,
+.tel,
+.password,
+.repass {
+  background-color: transparent;
+  border: 1px solid var(--clr-abbey);
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.input-register span,
+.input-login span {
+  text-transform: uppercase;
+}
+
+.error-message {
+  color: var(--clr-danger);
+}

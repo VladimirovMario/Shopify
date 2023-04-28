@@ -1,0 +1,71 @@
+.details-comments {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0px auto;
+}
+
+.comments-title {
+  text-align: center;
+  font-size: 45px;
+  font-family: "Barlow", sans-serif;
+  color: var(--clr-white);
+  margin-bottom: 32px;
+}
+
+/* content-publications */
+.content-publication {
+  background-color: var(--clr-white);
+  border-style: double;
+  border-color: var(--clr-pirate-gold);
+  border-radius: 6px;
+  border-width: 10px;
+  margin: 20px;
+  padding: 12px 24px;
+  min-height: 135px;
+
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  gap: 36px;
+}
+
+.author-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-wrapper .author-img-wrapper {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.author-wrapper .author-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.author-wrapper .author-name {
+  font-size: 23px;
+  letter-spacing: 1px;
+  color: var(--clr-abbey);
+}
+
+.content-publication .publication-title {
+  font-size: 21px;
+  padding-bottom: 12px;
+  color: var(--clr-rangoon-green);
+  font-family: "Barlow", sans-serif;
+}
+
+.publication-desc {
+  word-wrap: break-word;
+  color: var(--clr-abbey);
+}
+
+.no-publication-title {
+  margin: 0 auto;
+  font-size: 23px;
+}

@@ -1,0 +1,76 @@
+:root {
+  --clr-primary-armadillo: #3e3d32;
+  --clr-rangoon-green: #141410;
+  --clr-abbey: #5c5d5e;
+  --clr-pirate-gold: #c47d04;
+  --clr-Bulgarian-Rose: #370511;
+  --clr-danger: #EB0029;
+  --clr-malibu: #50b9e1;
+  --clr-highland: #7A9364;
+  --clr-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-primary-armadillo);
+  position: relative;
+}
+
+/* section */
+.section {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-bottom: 64px;
+  /* padding: 64px 0; */
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  color: var(--clr-white);
+  margin-bottom: 32px;
+}
+
+.section-divider {
+  height: 1px;
+  opacity: 0.7;
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--clr-pirate-gold);
+  margin-bottom: 64px;
+}
+
+/* Typography */
+h1 {
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.03em;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}

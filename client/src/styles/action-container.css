@@ -1,0 +1,16 @@
+.action-container {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+  margin-bottom: 64px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+
+  border-radius: 6px;
+  background-color: var(--clr-white);
+  box-shadow: -2px -1px 12px 1px var(--clr-pirate-gold);
+  overflow: hidden;
+  padding: 24px 16px;
+}

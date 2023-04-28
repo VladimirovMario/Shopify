@@ -1,0 +1,60 @@
+.hero {
+  margin-bottom: 64px;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  opacity: 0.6;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  display: flex;
+}
+
+.hero-title {
+  font-size: 49px;
+  margin-top: 3.4em;
+  margin-left: 2em;
+  font-family: "EB Garamond", serif;
+  text-transform: uppercase;
+  color: var(--clr-white);
+}
+
+.hero-subtitle {
+  font-size: 49px;
+  margin-top: 4.75em;
+  margin-left: -0.8em;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+  color: var(--clr-white);
+}
+
+.site-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-img {
+  position: absolute;
+  z-index: -1;
+  height: auto;
+  width: auto;
+  object-fit: center;
+}

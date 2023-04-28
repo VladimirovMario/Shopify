@@ -1,0 +1,52 @@
+.product-wrapper {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+}
+
+.search-form {
+  margin: 24px auto;
+  max-width: calc(100% - 2 * 100px);
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: var(--clr-white);
+  box-shadow: -2px -1px 12px 1px var(--clr-pirate-gold);
+}
+
+.search-label {
+  min-width: 80%;
+}
+
+
+
+.search-terms {
+  margin-right: 24px;
+  font-size: 23px;
+  text-transform: uppercase;
+  color: var(--clr-rangoon-green);
+}
+
+.search-input {
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid var(--clr-abbey);
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.product-ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 12px;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.no-publications {
+  text-align: center;
+  color: var(--clr-white);
+}

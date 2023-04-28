@@ -1,0 +1,48 @@
+.lds-wrapper {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 64px;
+}
+
+.lds-message {
+  font-size: 23px;
+  color: var(--clr-white);
+}
+
+.loading {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: linear-gradient(var(--clr-malibu), transparent);
+  /* border-right: 10px solid var(--clr-malibu); */
+  /* border-left: 10px solid var(--clr-malibu); */
+  animation: spin 1.2s linear infinite;
+}
+
+.loading-interior {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: var(--clr-primary-armadillo);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

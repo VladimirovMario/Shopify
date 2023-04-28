@@ -1,0 +1,63 @@
+.create-comment {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+  margin-bottom: 64px;
+  background-color: var(--clr-white);
+  border-radius: 6px;
+  box-shadow: -2px -1px 12px 1px var(--clr-pirate-gold);
+  padding: 32px;
+  min-height: 50vh;
+
+  display: flex;
+  gap: 32px;
+}
+
+.game-wrapper {
+  max-width: 20%;
+}
+
+.game-title {
+  color: var(--clr-abbey);
+  margin-bottom: 24px;
+}
+
+.image-wrapper {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.form-wrapper {
+  width: 80%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-label {
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+
+.error-message {
+  color: var(--clr-danger);
+}
+
+.input-subject {
+  width: 80%;
+}
+
+.message {
+  resize: none;
+  width: 100%;
+}
+
+.message,
+.input-subject {
+  background-color: transparent;
+  border: 1px solid var(--clr-abbey);
+  border-radius: 6px;
+  padding: 8px;
+}

@@ -1,0 +1,82 @@
+.btn {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 300ms ease-in-out;
+}
+
+.action-bnt,
+.form-btn {
+  border-radius: 6px;
+  font-size: 21px;
+  padding: 6px 0px;
+  color: var(--clr-white);
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-comments {
+  color: var(--clr-white);
+  font-size: 23px;
+  padding: 8px 24px;
+  border-radius: 6px;
+  -webkit-transition: 300ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.btn-edit {
+  background-color: var(--clr-highland);
+}
+
+.btn-delete {
+  background-color: var(--clr-Bulgarian-Rose);
+}
+
+.btn-comments {
+  background-color: var(--clr-pirate-gold);
+}
+
+.create-btn {
+  background-color: var(--clr-highland);
+}
+
+.edit-btn,
+.form-btn {
+  background-color: var(--clr-abbey);
+}
+
+.delete-btn {
+  background-color: var(--clr-danger);
+}
+
+.btn-edit:hover,
+.btn-delete:hover,
+.btn-comments:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.create-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--clr-highland);
+  color: var(--clr-highland);
+}
+
+.edit-btn:hover,
+.form-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--clr-abbey);
+  color: var(--clr-abbey);
+}
+
+.delete-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--clr-danger);
+  color: var(--clr-danger);
+}

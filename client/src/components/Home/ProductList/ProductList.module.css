@@ -1,0 +1,12 @@
+.product-wrapper {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+}
+
+.product-ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 12px;
+  border-radius: 6px;
+  background-color: transparent;
+}

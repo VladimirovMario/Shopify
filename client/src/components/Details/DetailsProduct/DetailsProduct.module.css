@@ -1,0 +1,99 @@
+/* Details card */
+.details-card {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+  margin-bottom: 64px;
+
+  /* flex */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--clr-white);
+
+  border-radius: 6px;
+  box-shadow: -2px -1px 12px 1px var(--clr-pirate-gold);
+  overflow: hidden;
+}
+
+.details-card .details-image-wrapper {
+  width: 40%;
+}
+
+.details-card .details-card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.details-card .card-content {
+  width: 60%;
+  padding: 12px 22px;
+  text-align: left;
+}
+
+.card-content .card-content-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.card-content .content-genre {
+  font-family: "Poppins", sans-serif;
+}
+
+.card-content .content-desc {
+  max-width: 70%;
+  text-indent: 16px;
+  margin-bottom: 12px;
+}
+
+.desc-divider {
+  max-width: 70%;
+  height: 1px;
+  margin-bottom: 24px;
+  border: 1px solid var(--clr-abbey);
+  opacity: 0.6;
+}
+
+/* extract in new css file */
+.content-price {
+  font-size: 26px;
+  color: var(--clr-malibu);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0px;
+  max-width: 70%;
+  margin-bottom: 24px;
+}
+
+.heart-icon,
+.shopping-icon {
+  font-size: 32px;
+  color: var(--clr-abbey);
+}
+
+.heart-icon {
+  margin-right: 12px;
+}
+
+.heart-icon:hover,
+.shopping-icon:hover {
+  color: var(--clr-pirate-gold);
+}
+/*----------------------*/
+
+.buttons-wrapper {
+  max-width: 70%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}

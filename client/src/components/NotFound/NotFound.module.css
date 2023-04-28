@@ -1,0 +1,32 @@
+.not-found {
+  max-width: calc(100% - 2 * 100px);
+  margin: 0 auto;
+  padding: 64px;
+
+  background-color: var(--clr-white);
+  box-shadow: 0px 0px 80px 40px var(--clr-pirate-gold);
+  border-radius: 6px;
+}
+
+.not-found-title {
+  font-size: 120px;
+  font-weight: 900;
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+  margin-bottom: 64px;
+  color: var(--clr-abbey);
+}
+
+.not-found-desc {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+}
+
+.not-found-link {
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--clr-pirate-gold);
+}

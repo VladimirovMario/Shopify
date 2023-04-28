@@ -1,0 +1,49 @@
+/* Header */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 24px;
+
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--clr-rangoon-green);
+  opacity: 0.7;
+}
+
+.header .logo {
+  height: 80px;
+  width: 100%;
+}
+
+.header .header-nav {
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.nav-ul,
+.main-links,
+.user-links,
+.guest-links {
+  display: flex;
+  gap: 8px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  font-size: 21px;
+  border-radius: 4px;
+
+  padding: 0.5em;
+  color: var(--clr-white);
+}
+
+.header-nav a:hover {
+  background-color: var(--clr-pirate-gold);
+}

@@ -1,0 +1,53 @@
+/* success */
+.success-box {
+  position: fixed;
+  right: 1.6em;
+  display: block;
+  z-index: 11111;
+  top: 15%;
+  text-align: center;
+  border-radius: 1rem;
+  color: green;
+  font-style: italic;
+  height: auto;
+  width: 420px;
+  box-shadow: 0px 0px 8px 7px green;
+}
+
+.success-desc {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Barlow", sans-serif;
+  padding: 22px;
+  height: auto;
+}
+
+.success-box {
+  -moz-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+/* @-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+  }
+} */
