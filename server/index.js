@@ -54,7 +54,7 @@ async function start() {
   app.use("/api/catalog", dataController);
   app.use("/api/comments" , commentController);
 
-  const port = 3030;
+  const port = process.env.PORT || 3030;
   app.listen(port, () => 
   console.log(`You can make requests to http://localhost:${port}/api`));
 }
