@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { useGameContext } from "../../contexts/GameContext";
 import { Loader } from "../Shared/Loader/Loader";
@@ -8,6 +9,7 @@ import styles from "./Catalog.module.css";
 
 export default function Catalog() {
   const { games, loading, searchGamesHandler } = useGameContext();
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const [value, setValues] = useState({
     search: "",
@@ -19,7 +21,13 @@ export default function Catalog() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // TODO set the search parameters in the url
+
+    if (value.search) {
+      setSearchParams(value);
+    } else {
+      setSearchParams("");
+    }
+    // TODO the value of (searchParams) updates at the second click
     searchGamesHandler(value.search);
   };
 
@@ -32,23 +40,21 @@ export default function Catalog() {
       <div className={styles["product-wrapper"]}>
         {/* <!-- SEARCH FORM --> */}
         <form onSubmit={onSubmit} className={styles["search-form"]}>
-          
-            <label className={styles["search-label"]} htmlFor="search">
-              <span className={styles["search-terms"]}>Title:</span>
-              <input
-                className={styles["search-input"]}
-                id="search"
-                type="search"
-                autoComplete="off"
-                placeholder="Start searching for..."
-                name="search"
-                value={value.search}
-                onChange={onChangeHandler}
-              />
-            </label>
-         
-            <button className={"action-bnt edit-btn btn"}>Search</button>
-         
+          <label className={styles["search-label"]} htmlFor="search">
+            <span className={styles["search-terms"]}>Title:</span>
+            <input
+              className={styles["search-input"]}
+              id="search"
+              type="search"
+              autoComplete="off"
+              placeholder="Start searching for..."
+              name="search"
+              value={value.search}
+              onChange={onChangeHandler}
+            />
+          </label>
+
+          <button className={"action-bnt edit-btn btn"}>Search</button>
         </form>
 
         {loading && <Loader />}
