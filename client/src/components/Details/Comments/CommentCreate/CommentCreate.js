@@ -32,14 +32,19 @@ export default function CommentCreate() {
       });
   }, [gameId]);
 
+  //TODO Make it work with useForm hook
   const onChangeHandler = (e) => {
     setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createComment(gameId, values);
-    navigate(`/catalog/${gameId}`);
+    if (Object.values(values).every((v) => v.trim() !== ``)) {
+      createComment(gameId, values);
+      navigate(`/catalog/${gameId}`);
+    } else {
+      alert("All fields are required!");
+    }
   };
 
   const onValidateForm = (e) => {
