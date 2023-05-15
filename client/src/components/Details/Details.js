@@ -13,15 +13,17 @@ export default function Details() {
   const [game, setGame] = useState({});
 
   useEffect(() => {
-    Promise.all([getById(gameId), getCommentsById(gameId)]).then(
-      ([gameData, comments]) => {
+    Promise.all([getById(gameId), getCommentsById(gameId)])
+      .then(([gameData, comments]) => {
         setGame({
           ...gameData,
           comments,
         });
-      }
-    );
-    // TODO optimize it 
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+    // TODO optimize it
     // I have to think how to change the state without re render.
   }, [gameId, game.comments?.length]);
 
@@ -29,11 +31,10 @@ export default function Details() {
     <section id="details" className={`${styles["details"]} section`}>
       <h2 className="section-title">Details</h2>
       <div className="section-divider"></div>
- 
+
       <DetailsProduct game={game} />
 
       <CommentsList comments={game?.comments} />
-
     </section>
   );
 }
