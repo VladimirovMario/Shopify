@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Game = require("../models/Game");
 const Comment = require("../models/Comment");
 
@@ -14,10 +15,12 @@ async function createGame(game) {
 }
 
 async function getById(id) {
-  // TODO fix the problem with invalid ID's
-  // The server dies
-  // http://localhost:3000/catalog/test
-  return Game.findById(id);
+  // Returns true if Mongoose can cast the given value to an ObjectId, or false otherwise.
+  const isValid = mongoose.isValidObjectId(id);
+
+  if (isValid) {
+    return Game.findById(id);
+  }
 }
 
 async function deleteById(id) {

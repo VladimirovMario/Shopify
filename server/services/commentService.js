@@ -1,9 +1,15 @@
+const mongoose = require("mongoose");
 const Comment = require("../models/Comment");
 const Game = require("../models/Game");
 const User = require("../models/User");
 
 async function getAll(gameId) {
-  return Comment.find({ gameId: gameId });
+  // Returns true if Mongoose can cast the given value to an ObjectId, or false otherwise.
+  const isValid = mongoose.isValidObjectId(gameId);
+
+  if (isValid) {
+    return Comment.find({ gameId: gameId });
+  }
 
   // Getting curr user all comments
   // userId =  "6395b0a7eaeb094e89d57132"
