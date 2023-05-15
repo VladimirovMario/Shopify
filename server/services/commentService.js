@@ -17,22 +17,26 @@ async function getAll(gameId) {
 }
 
 async function createComment(gameId, userId, { subject, content }) {
-  const { email, username } = await User.findById(userId);
+  const isValid = mongoose.isValidObjectId(gameId);
 
-  const comment = await Comment.create({
-    author: { email, username },
-    subject,
-    content,
-    gameId,
-    _ownerId: userId,
-  });
+  if (isValid) {
+    const { email, username } = await User.findById(userId);
 
-  const game = await Game.findByIdAndUpdate(
-    { _id: gameId },
-    { $push: { comments: comment._id } }
-  );
+    const comment = await Comment.create({
+      author: { email, username },
+      subject,
+      content,
+      gameId,
+      _ownerId: userId,
+    });
 
-  return comment;
+    const game = await Game.findByIdAndUpdate(
+      { _id: gameId },
+      { $push: { comments: comment._id } }
+    );
+
+    return comment;
+  }
 }
 
 module.exports = {
