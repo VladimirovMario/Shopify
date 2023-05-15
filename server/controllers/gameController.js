@@ -45,6 +45,10 @@ gameController.post("/", hasUser(), async (req, res) => {
 
 gameController.get("/:id", async (req, res) => {
   const item = await getById(req.params.id);
+
+  if (item === undefined) {
+    return res.status(404).json({ message: "Please, enter a valid address!" });
+  }
   res.json(item);
 });
 

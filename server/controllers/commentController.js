@@ -11,6 +11,11 @@ commentController.get("/:gameId", async (req, res) => {
 
 commentController.post("/:gameId", hasUser(), async (req, res) => {
   try {
+    if (req.params.gameId === 'undefined') {
+      return res
+        .status(404)
+        .json({ message: "Cannot add comments on invalid address!" });
+    }
     const comment = await createComment(
       req.params.gameId,
       req.user._id,
