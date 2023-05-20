@@ -104,8 +104,8 @@
 }
 
 @media screen and (max-width: 499px) {
-  html {
-    font-size: 12px;
+  .hero-title {
+    font-size: 1.5rem;
   }
 
   .hero-content {
@@ -113,6 +113,7 @@
   }
 
   .hero-subtitle {
+    font-size: 1.5rem;
     right: 24px;
   }
 }
