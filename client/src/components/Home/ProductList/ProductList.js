@@ -4,7 +4,9 @@ import styles from "./ProductList.module.css";
 export default function ProductList({ games }) {
   return (
     <section className="section">
-      <h2 className={"section-title"}>Start your journey</h2>
+      <h2 className={`${styles["section-title"]} section-title`}>
+        Start your journey
+      </h2>
       <div className={"section-divider"}></div>
 
       {/* <!-- Products --> */}

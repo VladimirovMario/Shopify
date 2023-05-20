@@ -10,3 +10,52 @@
   border-radius: 6px;
   background-color: transparent;
 }
+
+@media screen and (max-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .product-wrapper {
+    max-width: calc(100% - 2 * 24px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .product-ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-wrapper {
+    max-width: calc(100% - 2 * 48px);
+  }
+  .product-ul {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .product-wrapper {
+    max-width: calc(100% - 2 * 24px);
+  }
+}
