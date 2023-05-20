@@ -47,3 +47,41 @@
 .header-nav a:hover {
   background-color: var(--clr-pirate-gold);
 }
+
+@media screen and (max-width: 800px) {
+  .header .logo {
+    height: 70px;
+  }
+
+  .header-nav a {
+    font-size: 18px;
+  }
+
+  .home-link {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-nav a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .header .logo {
+    height: 60px;
+  }
+
+  .header {
+    padding: 6px 12px;
+  }
+
+  .header .header-nav {
+    margin-right: 12px;
+  }
+
+  .header-nav a {
+    font-size: 12px;
+  }
+}

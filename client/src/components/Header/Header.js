@@ -21,14 +21,14 @@ export default function Header() {
           
           {/* Main links */}
           <div className={styles["main-links"]}>
-            <li><Link to={"/"}>Home</Link></li>
+            <li><Link className={styles["home-link"]}  to={"/"}>Home</Link></li>
             <li><Link to={"/catalog"}>Explore</Link></li>
           </div>
 
           {/* <!-- Logged users --> */}
           {isAuthenticated && 
           <div className={styles["user-links"]}>
-            <li><Link to={"/create-product"}>Create Publication</Link></li>
+            <li><Link to={"/create-product"}>Create</Link></li>
             <li><Link to={"/auth/profile"}>Profile</Link></li>
             <li><Link to={"/auth/logout"}>Logout</Link></li>
           </div>
