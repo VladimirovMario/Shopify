@@ -64,3 +64,7 @@ In case, that you use the provided data. There are three users:
 ### Edit page
 
 ![edit-page-shopify](https://user-images.githubusercontent.com/103949296/230657687-42b6de54-38e4-4c3e-9f4a-69eea21f1fc2.png)
+
+###  Responsive view at 360px
+
+![home-responsive-page-shopify ](https://github.com/VladimirovMario/Shopify/assets/103949296/6fd8c704-2502-4060-9e43-28454c97957c)
