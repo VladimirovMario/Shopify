@@ -1,0 +1,11 @@
+.contacts-title {
+  margin-bottom: 24px;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
