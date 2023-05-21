@@ -33,7 +33,9 @@ export default function Catalog() {
 
   return (
     <section className="section">
-      <h2 className="section-title">Games for ps4</h2>
+      <h2 className={`${styles["section-title"]} section-title`}>
+        Games for ps4
+      </h2>
       <div className="section-divider"></div>
 
       {/* <!-- Products --> */}
