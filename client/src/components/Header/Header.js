@@ -4,46 +4,112 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const { isAuthenticated } = useAuthContext(); 
+  const combinedStyles = `${styles["profile-icon-wrapper"]} ${styles["dropdown-nav"]}`
+
   return (
     <header className={styles.header}>
-      {/* <!-- Site Logo --> */}
-      <ul>
-        <li>
-          <Link to={"/"}>
-            <img className={styles.logo} src="/static/shopping-logo.png" alt="logo"/>
-          </Link>
-        </li>
-      </ul>
-
-      {/* <!-- Navigation --> */}
-      <nav className={styles["header-nav"]}>
-        <ul className={styles["nav-ul"]}>
-          
-          {/* Main links */}
-          <div className={styles["main-links"]}>
-            <li><Link className={styles["home-link"]}  to={"/"}>Home</Link></li>
-            <li><Link to={"/catalog"}>Explore</Link></li>
-          </div>
-
-          {/* <!-- Logged users --> */}
-          {isAuthenticated && 
-          <div className={styles["user-links"]}>
-            <li><Link to={"/create-product"}>Create</Link></li>
-            <li><Link to={"/auth/profile"}>Profile</Link></li>
-            <li><Link to={"/auth/logout"}>Logout</Link></li>
-          </div>
-          }
-
-          {/* <!-- Guest users --> */}
-          {!isAuthenticated && 
-          <div className={styles["guest-links"]}>
-            <li><Link to={"/auth/login"}>Login</Link></li>
-            <li><Link to={"/auth/register"}>Register</Link></li>
-          </div>
-          }
-
+    <div className={styles["top-navigation-main"]}>
+        {/* <!-- Shopify logo  --> */}
+        <ul>
+            <li>
+                <Link to={"/"}>
+                    <img className={styles["shopify-logo"]} src="/static/shopping-logo.png" alt="logo" />
+                </Link>
+            </li>
         </ul>
-      </nav>
-    </header>
+
+        {/* <!-- Search form --> */}
+        <form className={styles["search-bar"]} >
+            <input className={styles["search-input"]} id="search" type="search" autoComplete="off"
+                placeholder="Start searching for..." name="search" />
+            <button className={styles["search-btn"]}>
+                <div className={styles["search-icon"]}>
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </button>
+        </form>
+
+        {/* <!-- Action icons --> */}
+        <div className={styles["top-icons-wrapper"]}>
+            <div className={combinedStyles} >
+                <img className={styles["profile-icon-img"]} src="/static/icons/login(128).png" alt="profile-icon" />
+                <ul className={styles["dropdown-content"]}>
+
+                    {/* <!-- Logged users --> */}
+                    {isAuthenticated && 
+                    <div className={styles["user-links"]}>
+                        <li>
+                            <Link className={styles["dropdown-content-links"]} to={"/auth/profile"}>Profile</Link>
+                        </li>
+                        <li>
+                            <Link className={styles["dropdown-content-links"]} to={"/auth/logout"}>Logout</Link>
+                        </li>
+                    </div>
+                    }
+
+                    {/* <!-- Guest users --> */}
+                    {!isAuthenticated && 
+                    <div className={styles["guest-links"]}>
+                        <li>
+                            <Link className={styles["dropdown-content-links"]} to={"/auth/login"}>Login</Link>
+                        </li>
+                        <li>
+                            <Link className={styles["dropdown-content-links"]} to={"/auth/register"}>Register</Link>
+                        </li>
+                    </div>
+                    }
+                </ul>
+            </div>
+
+            <div className={styles["wishlist-icon-wrapper"]}>
+                <img className={styles["wishlist-icon-img"]} src="/static/icons/heart(128).png" alt="wishlist-icon" />
+                <div className={styles["wishlist-count"]}><span>12</span></div>
+            </div>
+
+            <div className={styles["shopping-cart-wrapper"]}>
+                <img className={styles["shopping-cart-img"]} src="/static/icons/shopping-cart(128).png" alt="shopping-cart" />
+                <div className={styles["shopping-count"]}><span>12</span></div>
+            </div>
+        </div>
+    </div>
+
+    {/* <!-- Header navigation --> */}
+    <div className={styles["header-nav-wrapper"]}>
+        <nav className={styles["header-nav"]}>
+
+            <ul className={styles["dropdown-nav"]}>
+                <li className={styles["main-nav-icon"]}>
+                    <Link to={"/"}>
+                        <i className="fa-solid fa-bars"></i><span className={styles["categories-link"]}>Categories</span>
+                    </Link>
+                </li>
+
+                {/* <!-- Dropdown-content --> */}
+                <ul className={styles["dropdown-content"]}>
+                    <li>
+                        <Link className={styles["dropdown-content-links"]} to={"/catalog"}>Explore</Link>
+                    </li>
+
+                    {isAuthenticated &&
+                    <li>
+                        <Link className={styles["dropdown-content-links"]} to={"/create-product"}>Create</Link>
+                    </li>
+                    }
+                    <li>
+                        <Link className={styles["dropdown-content-links"]} to={"/"}>Link 3</Link>
+                    </li>
+                </ul>
+            </ul>
+
+            <ul>
+              {isAuthenticated &&
+                <li>
+                  <Link to={"/create-product"}>Create</Link>
+                </li>
+              }
+            </ul>
+        </nav>
+    </div>
+</header>
   );
 }
