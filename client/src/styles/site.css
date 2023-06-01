@@ -3,10 +3,11 @@
   --clr-rangoon-green: #141410;
   --clr-abbey: #5c5d5e;
   --clr-pirate-gold: #c47d04;
+  --clr-raw-sienna: #cc8745;
   --clr-Bulgarian-Rose: #370511;
-  --clr-danger: #EB0029;
+  --clr-danger: #eb0029;
   --clr-malibu: #50b9e1;
-  --clr-highland: #7A9364;
+  --clr-highland: #7a9364;
   --clr-white: #ffffff;
 }
 
@@ -15,6 +16,8 @@ html {
 }
 
 body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
   background-color: var(--clr-primary-armadillo);
   position: relative;
 }
@@ -35,42 +38,32 @@ body {
 }
 
 .section-divider {
-  height: 1px;
-  opacity: 0.7;
-  width: 80%;
   margin: 0 auto;
+  height: 1px;
+  width: 80%;
+  opacity: 0.7;
   background-color: var(--clr-pirate-gold);
   margin-bottom: 64px;
 }
 
 /* Typography */
 h1 {
-  font-size: 56px;
-  line-height: 64px;
-  letter-spacing: -0.04em;
-}
-
-h2 {
-  font-size: 48px;
-  line-height: 64px;
-  letter-spacing: -0.03em;
-}
-
-h3 {
-  font-weight: 600;
   font-size: 36px;
   line-height: 40px;
   letter-spacing: -0.03em;
 }
 
-h4 {
+h2 {
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.02em;
 }
 
-h5 {
-  font-size: 20px;
-  line-height: 32px;
-  letter-spacing: -0.02em;
+h3 {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+h4 {
+  font-size: 18px;
 }
