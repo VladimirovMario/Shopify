@@ -7,6 +7,7 @@
   --clr-Bulgarian-Rose: #370511;
   --clr-danger: #eb0029;
   --clr-malibu: #50b9e1;
+  --clr-puerto-rico: #39c4b1;
   --clr-highland: #7a9364;
   --clr-white: #ffffff;
 }
@@ -19,6 +20,8 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   background-color: var(--clr-primary-armadillo);
+  background-color: var(--clr-white);
+
   position: relative;
 }
 
@@ -26,8 +29,7 @@ body {
 .section {
   margin: 0 auto;
   max-width: 1200px;
-  margin-bottom: 64px;
-  /* padding: 64px 0; */
+  padding: 12px 10px;
 }
 
 .section-title {
