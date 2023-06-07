@@ -1,0 +1,13 @@
+.image-wrapper {
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 15px -3px #000000;
+  box-shadow: 0px 0px 15px -3px #000000;
+}
+
+.arrivals-image {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
