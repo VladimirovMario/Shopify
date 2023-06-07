@@ -41,16 +41,19 @@
 
 .hero-title {
   text-transform: uppercase;
+  font-size: 56px;
   margin-bottom: 48px;
 }
 
 .hero-subtitle {
+  font-size: 48px;
   position: absolute;
   right: 72px;
   bottom: 0px;
 }
 
 .site-title {
+  font-size: 48px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
