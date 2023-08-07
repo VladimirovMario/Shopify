@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const databaseConfig = require('./config/database');
 const bodyParser = require('body-parser');
 
@@ -37,6 +38,6 @@ async function start() {
 
   const port = process.env.PORT || 3030;
   app.listen(port, () =>
-    console.log(`You can make requests to http://localhost:${port}/api`)
+    console.log(`You can make requests to: \nhttp://localhost:${port}/api`)
   );
 }
