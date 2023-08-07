@@ -1,6 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
-
+const databaseConfig = require('./config/database');
 const bodyParser = require('body-parser');
 
 const cors = require('./middlewares/cors');
@@ -13,24 +12,11 @@ const gameController = require('./controllers/gameController');
 const homeController = require('./controllers/homeController');
 const commentController = require('./controllers/commentController');
 
-const connectionString = 'mongodb://0.0.0.0:27017/shopify';
 start();
 
 async function start() {
-  try {
-    await mongoose.connect(connectionString, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-    });
-    console.log('Database connected');
-  } catch (error) {
-    console.error('Error initializing database');
-    console.error(error.message);
-    process.exit(1);
-  }
-
   const app = express();
-
+  await databaseConfig(app);
   app.use(bodyParser.json({ limit: '10mb', extended: true }));
   app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
