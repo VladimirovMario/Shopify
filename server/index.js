@@ -1,17 +1,14 @@
 const express = require('express');
-const cors = require('cors');
 const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
-const jwt = require('jsonwebtoken');
-const expressJWT = require('express-jwt');
 
-const config = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
+const trimBody = require('./middlewares/trimBody');
+const session = require('./middlewares/session');
 
 const authController = require('./controllers/authController');
 const dataController = require('./controllers/dataController');
-const trimBody = require('./middlewares/trimBody');
-const session = require('./middlewares/session');
 const gameController = require('./controllers/gameController');
 const homeController = require('./controllers/homeController');
 const commentController = require('./controllers/commentController');
@@ -38,9 +35,7 @@ async function start() {
   app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
   app.use(express.json());
-
-  app.use(cors({ origin: config.origin, credentials: true }));
-
+  app.use(cors());
   app.use(trimBody());
   app.use(session());
 
