@@ -1,15 +1,12 @@
-const env = process.env.NODE_ENV || 'development';
-
-const config = {
-    development: {
-        port: process.env.PORT || 3000,
-         origin: ['http://localhost:5555', 'http://localhost:4200', 'http://localhost:3000']
-    },
-    production: {
-        port: process.env.PORT || 3000,
-        dbURL: process.env.DB_URL_CREDENTIALS,
-        origin: []
-    }
+module.exports = () => (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'OPTIONS, GET, POST, PUT, DELETE'
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Content-Type, X-Authorization'
+  );
+  next();
 };
-
-module.exports = config[env];
