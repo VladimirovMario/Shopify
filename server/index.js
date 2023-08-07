@@ -1,23 +1,20 @@
 const express = require('express');
-require('dotenv').config();
+const dotenv = require('dotenv');
 const databaseConfig = require('./config/database');
+const routesConfig = require('./config/routes');
 const bodyParser = require('body-parser');
 
 const cors = require('./middlewares/cors');
 const trimBody = require('./middlewares/trimBody');
 const session = require('./middlewares/session');
 
-const authController = require('./controllers/authController');
-const dataController = require('./controllers/dataController');
-const gameController = require('./controllers/gameController');
-const homeController = require('./controllers/homeController');
-const commentController = require('./controllers/commentController');
-
 start();
 
 async function start() {
+  dotenv.config();
   const app = express();
   await databaseConfig(app);
+
   app.use(bodyParser.json({ limit: '10mb', extended: true }));
   app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
@@ -26,15 +23,7 @@ async function start() {
   app.use(trimBody());
   app.use(session());
 
-  app.get('/', (req, res) => {
-    res.json({ message: 'REST service operational' });
-  });
-
-  app.use('/api/', homeController);
-  app.use('/api/user', authController);
-  app.use('/api/game', gameController);
-  app.use('/api/catalog', dataController);
-  app.use('/api/comments', commentController);
+  routesConfig(app);
 
   const port = process.env.PORT || 3030;
   app.listen(port, () =>
