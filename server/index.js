@@ -1,5 +1,5 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const databaseConfig = require('./config/database');
 const routesConfig = require('./config/routes');
 const bodyParser = require('body-parser');
@@ -11,7 +11,6 @@ const session = require('./middlewares/session');
 start();
 
 async function start() {
-  dotenv.config();
   const app = express();
   await databaseConfig(app);
 
