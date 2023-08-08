@@ -1,4 +1,6 @@
-const host = "http://localhost:3030";
+import { host } from '../constants/index';
+
+const baseUrl = host.BASE_URL || 'http://localhost:3030';
 
 export const requester = async (method, token, url, data) => {
   const options = {};
@@ -23,7 +25,7 @@ export const requester = async (method, token, url, data) => {
   }
 
   try {
-    const response = await fetch(host + url, options);
+    const response = await fetch(baseUrl + url, options);
     // console.log("From requester.js", response);
 
     if (response.ok === false) {
