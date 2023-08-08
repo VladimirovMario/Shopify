@@ -12,7 +12,7 @@
 
 .sitemap-item-link {
   text-decoration: none;
-  color: var(--clr-white);
+  color: var(--clr-headings-primary);
   padding: 4px 8px;
   line-height: 1px;
   border-radius: 4px;

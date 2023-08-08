@@ -9,6 +9,7 @@
   --clr-malibu: #50b9e1;
   --clr-puerto-rico: #39c4b1;
   --clr-highland: #7a9364;
+  --clr-headings-primary: #141410;
   --clr-white: #ffffff;
 }
 
@@ -35,7 +36,7 @@ body {
 .section-title {
   text-align: center;
   font-family: "Barlow", sans-serif;
-  color: var(--clr-white);
+  color: var(--clr-headings-primary);
   margin-bottom: 32px;
 }
 

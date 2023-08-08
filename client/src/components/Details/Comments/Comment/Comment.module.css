@@ -5,9 +5,8 @@
 
 .comments-title {
   text-align: center;
-  font-size: 45px;
-  font-family: "Barlow", sans-serif;
-  color: var(--clr-white);
+  font-family: 'Barlow', sans-serif;
+  color: var(--clr-headings-primary);
   margin-bottom: 32px;
 }
 
@@ -57,7 +56,7 @@
   font-size: 21px;
   padding-bottom: 12px;
   color: var(--clr-rangoon-green);
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .publication-desc {

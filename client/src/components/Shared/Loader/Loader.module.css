@@ -14,7 +14,7 @@
 
 .lds-message {
   font-size: 23px;
-  color: var(--clr-white);
+  color: var(--clr-headings-primary);
 }
 
 .loading {
@@ -35,7 +35,7 @@
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  background-color: var(--clr-primary-armadillo);
+  background-color: var(--clr-white);
 }
 
 @keyframes spin {
