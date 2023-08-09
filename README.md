@@ -1,47 +1,70 @@
 # Shopify
 
-## Shopify is a small SPA created with React, Node.js and MongoDB.
+Shopify is a small Single Page Application (SPA) created using React, Node.js, and MongoDB. It provides a platform for users to interact with and manage a collection of games.
 
+## Deployment
+
+The Shopify application has been deployed using different services:
+
+- **React Client Side (Frontend):** The client-side of the application is hosted on Firebase. You can access the deployed client application at [https://shopify-c6138.web.app/](https://shopify-c6138.web.app/).
+
+- **Node.js Server (Backend):** The server-side of the application is deployed on Render.
+
+- **Database (MongoDB):** The database for the application is hosted on MongoDB Atlas. It ensures seamless data storage and retrieval.
+
+## My Skills
 [![My Skills](https://skillicons.dev/icons?i=react,js,html,css,nodejs,mongodb,vscode,stackoverflow)](https://skillicons.dev)
 
-## [Link to previous commits on this project](https://github.com/VladimirovMario/JS-Front-End/tree/main/02.%20React%20-2023/01.%20Shopify)
+Link to previous commits on this project: [Link to Commits](https://github.com/VladimirovMario/JS-Front-End/tree/main/02.%20React%20-2023/01.%20Shopify)
 
 ## Description
 
-```
-- register as regular user, login and logout
-- see games, filtered by descending order
-- see all games
-- search games by title
-- create a new game
-- read the game detailed information
-- update
-- delete
-- add games to favorite
-- have profile area with all favorite games
-- leave comments on other users publications
-```
+Shopify offers the following features:
 
-### To start the client:
-```
-- npm install
-- npm start
-```
+- **User Authentication:**
+  - Register as a regular user
+  - Login and logout
 
-### To start the server:
-```
-- npm install
-- npm start
-```
+- **Game Management:**
+  - View games in descending order
+  - View all games
+  - Search games by title
+  - Create a new game
+  - Read detailed information about a game
+  - Update game information
+  - Delete a game
 
-### Upcoming features
-```
-- admin role
-- ability to add game to basket
-```
+- **Favorites and Profile:**
+  - Add games to favorites
+  - Access a profile area displaying favorite games
 
-### [Provided data](https://github.com/VladimirovMario/JS-Front-End/tree/main/02.%20React%20-2023/01.%20Shopify/data)
-In case, that you use the provided data. There are three users:
+- **Community Interaction:**
+  - Leave comments on other users' publications
+
+## Getting Started
+
+To start the client:
+
+1. Install dependencies: `npm install`
+2. Start the client: `npm start`
+
+To start the server:
+
+1. Install dependencies: `npm install`
+2. Start the server: `npm start`
+
+## Upcoming Features
+
+- **Admin Role:**
+  - Enhanced role-based access control for administrators
+
+- **Shopping Cart:**
+  - Ability to add games to the shopping basket
+
+
+### [Link to provided data](https://github.com/VladimirovMario/JS-Front-End/tree/main/02.%20React%20-2023/01.%20Shopify/data)
+
+If you choose to use the provided data for testing, three sample users are available:
 - `peter@abv.bg : 123`
 - `jane@gmal.com : 123456`
 - `george@abv.bg : 123`
