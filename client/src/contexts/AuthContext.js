@@ -1,12 +1,11 @@
-import { createContext, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { authServiceFactory } from "../services/authService";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { createContext, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { authServiceFactory } from '../services/authService';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-
   const [auth, setAuth] = useLocalStorage('auth', {});
 
   const authService = authServiceFactory(auth.token);
@@ -17,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const result = await authService.login(data);
       setAuth(result);
-      navigate("/catalog");
+      navigate('/catalog');
       // console.log(">>> From authContext onLoginSubmit result", result);
       // { email: "peter@abv.bg", _id: ..., token: ... }
     } catch (error) {
@@ -28,11 +27,11 @@ export const AuthProvider = ({ children }) => {
   const onRegisterSubmit = async (data) => {
     try {
       if (data.password !== data.repass) {
-        throw new Error("Passwords don't match!");
+        throw new Error("Passwords don't match");
       }
       const result = await authService.register(data);
       setAuth(result);
-      navigate("/catalog");
+      navigate('/catalog');
     } catch (error) {
       alert(error.message);
     }

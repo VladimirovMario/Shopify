@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
-const Comment = require("../models/Comment");
-const Game = require("../models/Game");
-const User = require("../models/User");
+const mongoose = require('mongoose');
+const Comment = require('../models/Comment');
+const Game = require('../models/Game');
+const User = require('../models/User');
 
 async function getAll(gameId) {
   // Returns true if Mongoose can cast the given value to an ObjectId, or false otherwise.

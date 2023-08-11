@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { useGameContext } from "../../contexts/GameContext";
-import { Loader } from "../Shared/Loader/Loader";
-import ProductPs4 from "../ProductPs4/ProductPs4";
+import { useGameContext } from '../../contexts/GameContext';
+import { Loader } from '../Shared/Loader/Loader';
+import ProductPs4 from '../ProductPs4/ProductPs4';
 
-import styles from "./Catalog.module.css";
+import styles from './Catalog.module.css';
 
 export default function Catalog() {
   const { games, loading, searchGamesHandler } = useGameContext();
   let [searchParams, setSearchParams] = useSearchParams();
 
   const [value, setValues] = useState({
-    search: "",
+    search: '',
   });
 
   const onChangeHandler = (e) => {
@@ -25,7 +25,7 @@ export default function Catalog() {
     if (value.search) {
       setSearchParams(value);
     } else {
-      setSearchParams("");
+      setSearchParams('');
     }
     // TODO the value of (searchParams) updates at the second click
     searchGamesHandler(value.search);
@@ -33,19 +33,19 @@ export default function Catalog() {
 
   return (
     <section className="section">
-      <h2 className={`${styles["section-title"]} section-title`}>
+      <h2 className={`${styles['section-title']} section-title`}>
         Games for ps4
       </h2>
       <div className="section-divider"></div>
 
       {/* <!-- Products --> */}
-      <div className={styles["product-wrapper"]}>
+      <div className={styles['product-wrapper']}>
         {/* <!-- SEARCH FORM --> */}
-        <form onSubmit={onSubmit} className={styles["search-form"]}>
-          <label className={styles["search-label"]} htmlFor="search">
-            <span className={styles["search-terms"]}>Title:</span>
+        <form onSubmit={onSubmit} className={styles['search-form']}>
+          <label className={styles['search-label']} htmlFor="search">
+            <span className={styles['search-terms']}>Title:</span>
             <input
-              className={styles["search-input"]}
+              className={styles['search-input']}
               id="search"
               type="search"
               autoComplete="off"
@@ -56,18 +56,18 @@ export default function Catalog() {
             />
           </label>
 
-          <button className={"action-bnt edit-btn btn"}>Search</button>
+          <button className={'action-bnt edit-btn btn'}>Search</button>
         </form>
 
         {loading && <Loader />}
 
-        <ul className={styles["product-ul"]}>
+        <ul className={styles['product-ul']}>
           {!loading &&
             games.map((game) => <ProductPs4 key={game._id} {...game} />)}
         </ul>
 
         {!games.length && (
-          <h3 className={styles["no-publications"]}>
+          <h3 className={styles['no-publications']}>
             No publications yet. Be the first one.
           </h3>
         )}

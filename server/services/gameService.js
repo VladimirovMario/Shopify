@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
-const Game = require("../models/Game");
-const Comment = require("../models/Comment");
+const mongoose = require('mongoose');
+const Game = require('../models/Game');
+const Comment = require('../models/Comment');
 
 async function getAll(search) {
   const query = {};
   if (search) {
-    query.title = new RegExp(search, "i");
+    query.title = new RegExp(search, 'i');
   }
   return Game.find(query);
 }

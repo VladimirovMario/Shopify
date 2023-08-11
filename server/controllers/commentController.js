@@ -1,20 +1,20 @@
-const commentController = require("express").Router();
+const commentController = require('express').Router();
 
-const { hasUser } = require("../middlewares/guards");
-const { getAll, createComment } = require("../services/commentService");
-const { parseError } = require("../util/parser");
+const { hasUser } = require('../middlewares/guards');
+const { getAll, createComment } = require('../services/commentService');
+const { parseError } = require('../util/parser');
 
-commentController.get("/:gameId", async (req, res) => {
+commentController.get('/:gameId', async (req, res) => {
   const comments = await getAll(req.params.gameId);
   res.status(200).json(comments);
 });
 
-commentController.post("/:gameId", hasUser(), async (req, res) => {
+commentController.post('/:gameId', hasUser(), async (req, res) => {
   try {
     if (req.params.gameId === 'undefined') {
       return res
         .status(404)
-        .json({ message: "Cannot add comments on invalid address!" });
+        .json({ message: 'Cannot add comments on invalid address!' });
     }
     const comment = await createComment(
       req.params.gameId,

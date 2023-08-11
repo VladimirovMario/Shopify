@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import CommentsList from "./Comments/CommentsList/CommentsList";
-import DetailsProduct from "./DetailsProduct/DetailsProduct";
+import CommentsList from './Comments/CommentsList/CommentsList';
+import DetailsProduct from './DetailsProduct/DetailsProduct';
 
-import styles from "./Details.module.css";
-import { getById } from "../../services/gameService";
-import { getCommentsById } from "../../services/commentService";
+import styles from './Details.module.css';
+import { getById } from '../../services/gameService';
+import { getCommentsById } from '../../services/commentService';
 
 export default function Details() {
   const { gameId } = useParams();
@@ -28,7 +28,7 @@ export default function Details() {
   }, [gameId, game.comments?.length]);
 
   return (
-    <section id="details" className={`${styles["details"]} section`}>
+    <section id="details" className={`${styles['details']} section`}>
       <h2 className="section-title">Details</h2>
       <div className="section-divider"></div>
 

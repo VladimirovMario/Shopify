@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   line-height: 1.5;
   background-color: var(--clr-primary-armadillo);
   background-color: var(--clr-white);
@@ -35,7 +35,7 @@ body {
 
 .section-title {
   text-align: center;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
   color: var(--clr-headings-primary);
   margin-bottom: 32px;
 }

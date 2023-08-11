@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useAuthContext } from "../../../contexts/AuthContext";
+import { useEffect, useState } from 'react';
+import { useAuthContext } from '../../../contexts/AuthContext';
 import {
   gameServiceFactory,
   getUserFavorites,
-} from "../../../services/gameService";
-import styles from "./Profile.module.css";
-import { ProfileProducts } from "./ProfileProducts/ProfileProducts";
+} from '../../../services/gameService';
+import styles from './Profile.module.css';
+import { ProfileProducts } from './ProfileProducts/ProfileProducts';
 
 // TODO implement logic to display all user comments
 export default function Profile() {
@@ -39,8 +39,8 @@ export default function Profile() {
       <h2 className="section-title">Full Profile Information</h2>
       <div className="section-divider"></div>
 
-      <article className={`${styles["profile-card"]} action-container`}>
-        <article className={styles["profile-card-info"]}>
+      <article className={`${styles['profile-card']} action-container`}>
+        <article className={styles['profile-card-info']}>
           <h2>Welcome, {userUsername}!</h2>
           <h3>Email: {userEmail}</h3>
           {/* <!--If the user has shared publications, separate their titles with a comma and a space (, )--> */}
@@ -62,13 +62,13 @@ export default function Profile() {
           ))}
         </article>
 
-        <div className={styles["profile-card-icon"]}>
+        <div className={styles['profile-card-icon']}>
           <img src="/static/images/vip-user.png" alt="vip-user.png" />
         </div>
       </article>
 
-      <div className={styles["product-wrapper"]}>
-        <ul className={styles["product-ul"]}>
+      <div className={styles['product-wrapper']}>
+        <ul className={styles['product-ul']}>
           {favoriteGames.map((game) => (
             <ProfileProducts
               key={game._id}

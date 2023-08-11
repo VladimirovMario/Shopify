@@ -1,15 +1,15 @@
-import styles from "../Register/Register.module.css";
+import styles from '../Register/Register.module.css';
 
-import { useAuthContext } from "../../../contexts/AuthContext";
-import { useForm } from "../../../hooks/useForm";
+import { useAuthContext } from '../../../contexts/AuthContext';
+import { useForm } from '../../../hooks/useForm';
 
 export default function Login() {
   const { onLoginSubmit } = useAuthContext();
 
   const { values, errors, onChangeHandler, onSubmit, onValidateForm } = useForm(
     {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     onLoginSubmit
   );
@@ -19,31 +19,31 @@ export default function Login() {
       <h2 className="section-title">Sign In</h2>
       <div className="section-divider"></div>
 
-      <div className={`${styles["login"]} action-container`}>
-        <div className={styles["login-img-wrapper"]}>
+      <div className={`${styles['login']} action-container`}>
+        <div className={styles['login-img-wrapper']}>
           <img
-            className={styles["login-img"]}
+            className={styles['login-img']}
             src="/static/images/register-login.jpg"
             alt="login.jpg"
           />
         </div>
 
-        <form onSubmit={onSubmit} className={styles["login-form"]}>
-          <h3 className={styles["form-container-title"]}>Welcome back</h3>
+        <form onSubmit={onSubmit} className={styles['login-form']}>
+          <h3 className={styles['form-container-title']}>Welcome back</h3>
 
           {/* <!-- Inputs --> */}
-          <div className={styles["input-login"]}>
+          <div className={styles['input-login']}>
             <label htmlFor="email">
               <span>
                 Email
                 {errors && (
-                  <span className={styles["error-message"]}>
+                  <span className={styles['error-message']}>
                     &nbsp;{errors.email}
                   </span>
                 )}
               </span>
               <input
-                className={styles["email"]}
+                className={styles['email']}
                 type="email"
                 id="email"
                 placeholder="peter@abv.bg"
@@ -58,13 +58,13 @@ export default function Login() {
               <span>
                 Password
                 {errors && (
-                  <span className={styles["error-message"]}>
+                  <span className={styles['error-message']}>
                     &nbsp;{errors.password}
                   </span>
                 )}
               </span>
               <input
-                className={styles["password"]}
+                className={styles['password']}
                 type="password"
                 id="password"
                 placeholder="*****"
@@ -75,7 +75,7 @@ export default function Login() {
               />
             </label>
 
-            <button className={"form-btn btn"}>Sign in</button>
+            <button className={'form-btn btn'}>Sign in</button>
           </div>
         </form>
       </div>

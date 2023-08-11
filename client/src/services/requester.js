@@ -5,13 +5,13 @@ const baseUrl = host.BASE_URL || 'http://localhost:3030';
 export const requester = async (method, token, url, data) => {
   const options = {};
 
-  if (method !== "GET") {
+  if (method !== 'GET') {
     options.method = method;
   }
 
   if (data !== undefined) {
     options.headers = {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     };
     options.body = JSON.stringify(data);
   }
@@ -19,7 +19,7 @@ export const requester = async (method, token, url, data) => {
   if (token) {
     options.headers = {
       ...options.headers,
-      "X-Authorization": token,
+      'X-Authorization': token,
     };
     // console.log("From requester.js", token);
   }
@@ -45,9 +45,9 @@ export const requester = async (method, token, url, data) => {
 
 export const requestFactory = (token) => {
   return {
-    get: requester.bind(null, "GET", token),
-    post: requester.bind(null, "POST", token),
-    put: requester.bind(null, "PUT", token),
-    delete: requester.bind(null, "DELETE", token),
+    get: requester.bind(null, 'GET', token),
+    post: requester.bind(null, 'POST', token),
+    put: requester.bind(null, 'PUT', token),
+    delete: requester.bind(null, 'DELETE', token),
   };
 };

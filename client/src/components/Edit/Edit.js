@@ -1,28 +1,28 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-import { getById } from "../../services/gameService";
-import { useGameContext } from "../../contexts/GameContext";
-import { formValidations } from "../../utils/formValidations";
-import styles from "../Create/Create.module.css";
+import { getById } from '../../services/gameService';
+import { useGameContext } from '../../contexts/GameContext';
+import { formValidations } from '../../utils/formValidations';
+import styles from '../Create/Create.module.css';
 
 export default function Edit() {
   const { gameId } = useParams();
   const { onEditSubmit } = useGameContext();
   const [values, setValues] = useState({
-    title: "",
-    genre: "",
-    price: "",
-    imageUrl: "",
-    description: "",
+    title: '',
+    genre: '',
+    price: '',
+    imageUrl: '',
+    description: '',
   });
 
   const [errors, setErrors] = useState({
-    title: "",
-    genre: "",
-    price: "",
-    imageUrl: "",
-    description: "",
+    title: '',
+    genre: '',
+    price: '',
+    imageUrl: '',
+    description: '',
   });
 
   useEffect(() => {
@@ -54,39 +54,39 @@ export default function Edit() {
       <h2 className="section-title">Edit product</h2>
       <div className="section-divider"></div>
 
-      <div className={"action-container"}>
-        <div className={styles["edit-img-wrapper"]}>
+      <div className={'action-container'}>
+        <div className={styles['edit-img-wrapper']}>
           <Link to={`/catalog/${gameId}`}>
             <img
-              className={styles["create-edit-img"]}
+              className={styles['create-edit-img']}
               src={values.imageUrl}
               alt="edit-product.jpg"
             />
           </Link>
         </div>
 
-        <form onSubmit={onSubmit} className={styles["form-container"]}>
-          <h3 className={styles["form-container-title"]}>Create Publication</h3>
-          <p className={styles["form-container-desc"]}>
+        <form onSubmit={onSubmit} className={styles['form-container']}>
+          <h3 className={styles['form-container-title']}>Create Publication</h3>
+          <p className={styles['form-container-desc']}>
             Add your own masterpiece!
           </p>
 
           {/* <!-- Inputs --> */}
-          <div className={styles["input-wrapper"]}>
-            <div className={styles["rows-aligned"]}>
-              <label className={styles["vertical"]} htmlFor="title">
-                <div className={styles["input-label"]}>
+          <div className={styles['input-wrapper']}>
+            <div className={styles['rows-aligned']}>
+              <label className={styles['vertical']} htmlFor="title">
+                <div className={styles['input-label']}>
                   <span>
                     Title
                     {errors && (
-                      <span className={styles["error-message"]}>
+                      <span className={styles['error-message']}>
                         &nbsp;{errors.title}
                       </span>
                     )}
                   </span>
                 </div>
                 <input
-                  className={styles["input-title"]}
+                  className={styles['input-title']}
                   type="text"
                   id="title"
                   placeholder="Grand Theft Auto V"
@@ -97,18 +97,18 @@ export default function Edit() {
                 />
               </label>
               <label htmlFor="genre">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>
                     Genre
                     {errors && (
-                      <span className={styles["error-message"]}>
+                      <span className={styles['error-message']}>
                         &nbsp;{errors.genre}
                       </span>
                     )}
                   </span>
                 </div>
                 <input
-                  className={styles["input-genre"]}
+                  className={styles['input-genre']}
                   type="text"
                   id="genre"
                   placeholder="Action"
@@ -119,18 +119,18 @@ export default function Edit() {
                 />
               </label>
               <label htmlFor="price">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>
                     Price
                     {errors && (
-                      <span className={styles["error-message"]}>
+                      <span className={styles['error-message']}>
                         &nbsp;{errors.price}
                       </span>
                     )}
                   </span>
                 </div>
                 <input
-                  className={styles["input-price"]}
+                  className={styles['input-price']}
                   type="number"
                   id="price"
                   name="price"
@@ -140,18 +140,18 @@ export default function Edit() {
                 />
               </label>
               <label htmlFor="imageUrl">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>
                     Image
                     {errors && (
-                      <span className={styles["error-message"]}>
+                      <span className={styles['error-message']}>
                         &nbsp;{errors.imageUrl}
                       </span>
                     )}
                   </span>
                 </div>
                 <input
-                  className={styles["input-img-url"]}
+                  className={styles['input-img-url']}
                   type="text"
                   id="imageUrl"
                   placeholder="https://"
@@ -164,20 +164,20 @@ export default function Edit() {
             </div>
 
             {/* <!-- text area --> */}
-            <div className={styles["align-center"]}>
+            <div className={styles['align-center']}>
               <label htmlFor="description">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>
                     Description
                     {errors && (
-                      <span className={styles["error-message"]}>
+                      <span className={styles['error-message']}>
                         &nbsp;{errors.description}
                       </span>
                     )}
                   </span>
                 </div>
                 <textarea
-                  className={styles["description"]}
+                  className={styles['description']}
                   cols="40"
                   rows="4"
                   placeholder="Grand Theft Auto (usually abbreviated GTA) is a series of games that incorporate driving and action gameplay styles."
@@ -187,9 +187,9 @@ export default function Edit() {
                   onBlur={onValidateForm}
                 ></textarea>
               </label>
-              <div className={styles["align-center-action"]}>
+              <div className={styles['align-center-action']}>
                 <input
-                  className={"action-bnt edit-btn btn"}
+                  className={'action-bnt edit-btn btn'}
                   type="submit"
                   value="Edit"
                 />

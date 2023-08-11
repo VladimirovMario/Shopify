@@ -11,7 +11,7 @@
 .not-found-title {
   font-size: 120px;
   font-weight: 900;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
   text-align: center;
   margin-bottom: 64px;
   color: var(--clr-abbey);
@@ -19,7 +19,7 @@
 
 .not-found-desc {
   text-align: center;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 20px;
 }
 

@@ -1,6 +1,6 @@
 /* TODO fix the profile page */
 .profile-card {
-  font-family: "EB Garamond", serif;
+  font-family: 'EB Garamond', serif;
   color: var(--clr-abbey);
 
   display: flex;

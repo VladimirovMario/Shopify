@@ -1,14 +1,14 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   gameServiceFactory,
   getAllGames,
   getLatestsGames,
   searchGames,
-} from "../services/gameService";
-import { commentServiceFactory } from "../services/commentService";
+} from '../services/gameService';
+import { commentServiceFactory } from '../services/commentService';
 
-import { useAuthContext } from "./AuthContext";
+import { useAuthContext } from './AuthContext';
 
 export const GameContext = createContext(null);
 
@@ -56,7 +56,7 @@ export const GameProvider = ({ children }) => {
       });
       setGames((state) => [...state, newGame]);
       setLatestGames([newGame, ...latestGames.slice(0, limit - 1)]);
-      navigate("/");
+      navigate('/');
     } catch (error) {
       alert(error.message);
     }
@@ -91,7 +91,7 @@ export const GameProvider = ({ children }) => {
       const updatedState = (state) => state.filter((game) => game._id !== id);
       setGames(updatedState);
       setLatestGames(updatedState);
-      navigate(`/`);
+      navigate('/');
     } catch (error) {
       alert(error.message);
     }
@@ -112,8 +112,8 @@ export const GameProvider = ({ children }) => {
   const searchGamesHandler = async (title) => {
     // TODO compare the old state and if there are no changes, don't set new one.
     try {
-     const search = await searchGames(title);
-     setGames(search)
+      const search = await searchGames(title);
+      setGames(search);
     } catch (error) {
       alert(error.message);
     }

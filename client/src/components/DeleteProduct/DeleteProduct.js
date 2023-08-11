@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useGameContext } from "../../contexts/GameContext";
-import { getById } from "../../services/gameService";
-import styles from "../Create/Create.module.css";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useGameContext } from '../../contexts/GameContext';
+import { getById } from '../../services/gameService';
+import styles from '../Create/Create.module.css';
 
 export default function DeleteProduct() {
   const { gameId } = useParams();
   const { onDeleteSubmit } = useGameContext();
   const [values, setValues] = useState({
-    title: "",
-    genre: "",
-    price: "",
-    imageUrl: "",
-    description: "",
+    title: '',
+    genre: '',
+    price: '',
+    imageUrl: '',
+    description: '',
   });
 
   useEffect(() => {
@@ -35,34 +35,34 @@ export default function DeleteProduct() {
       <h2 className="section-title">Delete product</h2>
       <div className="section-divider"></div>
 
-      <div className={"action-container"}>
-        <div className={styles["edit-img-wrapper"]}>
+      <div className={'action-container'}>
+        <div className={styles['edit-img-wrapper']}>
           <img
-            className={styles["create-edit-img"]}
+            className={styles['create-edit-img']}
             src={values.imageUrl}
             alt={`${values.title}.jpg`}
           />
         </div>
 
-        <form onSubmit={onSubmit} className={styles["form-container"]}>
+        <form onSubmit={onSubmit} className={styles['form-container']}>
           <h3
-            className={`${styles["form-container-title"]} ${styles["delete-title"]}`}
+            className={`${styles['form-container-title']} ${styles['delete-title']}`}
           >
             Delete {values.title}
           </h3>
-          <p className={styles["form-container-desc"]}>
+          <p className={styles['form-container-desc']}>
             Are you sure you want to delete this "{values.title}" game?
           </p>
 
           {/* <!-- Inputs --> */}
-          <div className={styles["input-wrapper"]}>
-            <div className={styles["rows-aligned"]}>
-              <label className={styles["vertical"]} htmlFor="title">
-                <div className={styles["input-label"]}>
+          <div className={styles['input-wrapper']}>
+            <div className={styles['rows-aligned']}>
+              <label className={styles['vertical']} htmlFor="title">
+                <div className={styles['input-label']}>
                   <span>Title</span>
                 </div>
                 <input
-                  className={styles["input-title"]}
+                  className={styles['input-title']}
                   type="text"
                   id="title"
                   name="title"
@@ -71,11 +71,11 @@ export default function DeleteProduct() {
                 />
               </label>
               <label htmlFor="genre">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>Genre</span>
                 </div>
                 <input
-                  className={styles["input-genre"]}
+                  className={styles['input-genre']}
                   type="text"
                   id="genre"
                   name="genre"
@@ -84,11 +84,11 @@ export default function DeleteProduct() {
                 />
               </label>
               <label htmlFor="price">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>Price</span>
                 </div>
                 <input
-                  className={styles["input-price"]}
+                  className={styles['input-price']}
                   type="number"
                   id="price"
                   name="price"
@@ -97,11 +97,11 @@ export default function DeleteProduct() {
                 />
               </label>
               <label htmlFor="imageUrl">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>Image Url</span>
                 </div>
                 <input
-                  className={styles["input-img-url"]}
+                  className={styles['input-img-url']}
                   type="text"
                   id="imageUrl"
                   name="imageUrl"
@@ -112,13 +112,13 @@ export default function DeleteProduct() {
             </div>
 
             {/* <!-- text area --> */}
-            <div className={styles["align-center"]}>
+            <div className={styles['align-center']}>
               <label htmlFor="description">
-                <div className={styles["input-label"]}>
+                <div className={styles['input-label']}>
                   <span>Description</span>
                 </div>
                 <textarea
-                  className={styles["description"]}
+                  className={styles['description']}
                   cols="40"
                   rows="4"
                   name="description"
@@ -126,9 +126,9 @@ export default function DeleteProduct() {
                   disabled={true}
                 ></textarea>
               </label>
-              <div className={styles["align-center-action"]}>
+              <div className={styles['align-center-action']}>
                 <input
-                  className={"action-bnt delete-btn btn"}
+                  className={'action-bnt delete-btn btn'}
                   type="submit"
                   value="Delete"
                 />

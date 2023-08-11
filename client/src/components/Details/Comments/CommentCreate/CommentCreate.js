@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
-import { getById } from "../../../../services/gameService";
-import { useGameContext } from "../../../../contexts/GameContext";
+import { getById } from '../../../../services/gameService';
+import { useGameContext } from '../../../../contexts/GameContext';
 
-import styles from "./CommentCreate.module.css";
-import { formValidations } from "../../../../utils/formValidations";
+import styles from './CommentCreate.module.css';
+import { formValidations } from '../../../../utils/formValidations';
 
 export default function CommentCreate() {
   const { createComment } = useGameContext();
@@ -13,13 +13,13 @@ export default function CommentCreate() {
   const navigate = useNavigate();
   const [game, setGame] = useState({});
   const [values, setValues] = useState({
-    subject: "",
-    content: "",
+    subject: '',
+    content: '',
   });
 
   const [errors, setErrors] = useState({
-    subject: "",
-    content: "",
+    subject: '',
+    content: '',
   });
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function CommentCreate() {
       createComment(gameId, values);
       navigate(`/catalog/${gameId}`);
     } else {
-      alert("All fields are required!");
+      alert('All fields are required!');
     }
   };
 
@@ -54,26 +54,26 @@ export default function CommentCreate() {
 
   return (
     <section className="section">
-      <h2 className={"section-title"}>Create Comment</h2>
-      <div className={"section-divider"}></div>
-      <div className={styles["create-comment"]}>
-        <div className={styles["game-wrapper"]}>
-          <h3 className={styles["game-title"]}>{game.title}</h3>
-          <div className={styles["image-wrapper"]}>
+      <h2 className={'section-title'}>Create Comment</h2>
+      <div className={'section-divider'}></div>
+      <div className={styles['create-comment']}>
+        <div className={styles['game-wrapper']}>
+          <h3 className={styles['game-title']}>{game.title}</h3>
+          <div className={styles['image-wrapper']}>
             <Link to={`/catalog/${gameId}`}>
               <img src={game.imageUrl} alt={`${game.title}.jpg`} />
             </Link>
           </div>
         </div>
 
-        <div className={styles["form-wrapper"]}>
-          <form onSubmit={onSubmit} className={styles["form"]} action="post">
+        <div className={styles['form-wrapper']}>
+          <form onSubmit={onSubmit} className={styles['form']} action="post">
             <label htmlFor="genre">
-              <div className={styles["input-label"]}>
+              <div className={styles['input-label']}>
                 <span>
                   Subject
                   {errors && (
-                    <span className={styles["error-message"]}>
+                    <span className={styles['error-message']}>
                       &nbsp;{errors.subject}
                     </span>
                   )}
@@ -81,7 +81,7 @@ export default function CommentCreate() {
               </div>
 
               <input
-                className={styles["input-subject"]}
+                className={styles['input-subject']}
                 type="text"
                 id="subject"
                 placeholder="Subject"
@@ -93,11 +93,11 @@ export default function CommentCreate() {
             </label>
 
             <label htmlFor="content">
-              <div className={styles["input-label"]}>
+              <div className={styles['input-label']}>
                 <span>
                   Content
                   {errors && (
-                    <span className={styles["error-message"]}>
+                    <span className={styles['error-message']}>
                       &nbsp;{errors.content}
                     </span>
                   )}
@@ -105,7 +105,7 @@ export default function CommentCreate() {
               </div>
 
               <textarea
-                className={styles["message"]}
+                className={styles['message']}
                 cols="40"
                 rows="4"
                 placeholder="Sure, feel free to enter your comment!"
@@ -116,7 +116,7 @@ export default function CommentCreate() {
               ></textarea>
             </label>
 
-            <button className={"action-bnt create-btn btn"}>
+            <button className={'action-bnt create-btn btn'}>
               Send Comment
             </button>
           </form>

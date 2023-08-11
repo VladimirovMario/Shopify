@@ -1,5 +1,5 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useAuthContext } from "../../contexts/AuthContext";
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuthContext } from '../../contexts/AuthContext';
 // import { createBrowserHistory } from "history";
 // const history = createBrowserHistory();
 // console.log(history)
@@ -9,7 +9,7 @@ export const RouteGuard = ({ children }) => {
   // console.log("RouteGuard isAuthenticated:", isAuthenticated);
 
   if (!isAuthenticated) {
-    return <Navigate to={"/auth/login"} />;
+    return <Navigate to={'/auth/login'} />;
   }
 
   return children ? children : <Outlet />;

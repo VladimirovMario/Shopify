@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { formValidations } from "../utils/formValidations";
+import { useState } from 'react';
+import { formValidations } from '../utils/formValidations';
 
 export const useForm = (initialValues, onSubmitHandler) => {
   const [values, setValues] = useState(initialValues);
@@ -23,7 +23,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
         onSubmitHandler(values);
         //   setValues(initialValues);
       } else {
-        alert("All fields are required!");
+        alert('All fields are required!');
       }
     }
   };

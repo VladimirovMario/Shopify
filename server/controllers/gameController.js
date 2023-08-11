@@ -1,6 +1,6 @@
-const gameController = require("express").Router();
+const gameController = require('express').Router();
 
-const { hasUser } = require("../middlewares/guards");
+const { hasUser } = require('../middlewares/guards');
 const {
   getAll,
   createGame,
@@ -10,11 +10,11 @@ const {
   addGameToFavorites,
   removeGameFromFavorites,
   getUserFavorites,
-} = require("../services/gameService");
+} = require('../services/gameService');
 
-const { parseError } = require("../util/parser");
+const { parseError } = require('../util/parser');
 
-gameController.get("/", async (req, res) => {
+gameController.get('/', async (req, res) => {
   let items = [];
   if (req.query.search !== undefined) {
     items = await getAll(req.query.search);
@@ -24,7 +24,7 @@ gameController.get("/", async (req, res) => {
   res.json(items);
 });
 
-gameController.post("/", hasUser(), async (req, res) => {
+gameController.post('/', hasUser(), async (req, res) => {
   const game = {
     title: req.body.title,
     description: req.body.description,
@@ -43,21 +43,21 @@ gameController.post("/", hasUser(), async (req, res) => {
   }
 });
 
-gameController.get("/:id", async (req, res) => {
+gameController.get('/:id', async (req, res) => {
   const item = await getById(req.params.id);
 
   if (item === undefined) {
-    return res.status(404).json({ message: "Please, enter a valid address!" });
+    return res.status(404).json({ message: 'Please, enter a valid address!' });
   }
   res.json(item);
 });
 
-gameController.put("/:id", hasUser(), async (req, res, next) => {
+gameController.put('/:id', hasUser(), async (req, res, next) => {
   try {
     // implement isOwner
     const item = await getById(req.params.id);
     if (req.user._id != item._ownerId) {
-      return res.status(403).json({ message: "You cannot modify this record" });
+      return res.status(403).json({ message: 'You cannot modify this record' });
     }
 
     const result = await updateById(req.params.id, req.body);
@@ -68,13 +68,13 @@ gameController.put("/:id", hasUser(), async (req, res, next) => {
   }
 });
 
-gameController.delete("/:id", hasUser(), async (req, res) => {
+gameController.delete('/:id', hasUser(), async (req, res) => {
   // TODO to see if i need owner or implement admin role
   try {
     // implement isOwner
     const item = await getById(req.params.id);
     if (req.user._id != item._ownerId) {
-      return res.status(403).json({ message: "You cannot modify this record" });
+      return res.status(403).json({ message: 'You cannot modify this record' });
     }
 
     await deleteById(req.params.id);
@@ -85,7 +85,7 @@ gameController.delete("/:id", hasUser(), async (req, res) => {
   }
 });
 
-gameController.post("/favorites/:gameId", hasUser(), async (req, res) => {
+gameController.post('/favorites/:gameId', hasUser(), async (req, res) => {
   try {
     const item = await addGameToFavorites(req.params.gameId, req.user._id);
     res.json(item);
@@ -95,7 +95,7 @@ gameController.post("/favorites/:gameId", hasUser(), async (req, res) => {
   }
 });
 
-gameController.put("/favorites/:gameId", hasUser(), async (req, res) => {
+gameController.put('/favorites/:gameId', hasUser(), async (req, res) => {
   try {
     const item = await removeGameFromFavorites(req.params.gameId, req.user._id);
     res.json(item);
@@ -105,7 +105,7 @@ gameController.put("/favorites/:gameId", hasUser(), async (req, res) => {
   }
 });
 
-gameController.get("/favorites/:userId", async (req, res) => {
+gameController.get('/favorites/:userId', async (req, res) => {
   // TODO make an authorized request with "hasUser()" guard and use req.user._id
   // After fixing the "client" authorization
   try {

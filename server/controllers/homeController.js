@@ -1,9 +1,8 @@
-const { getAll, getLatestsGames } = require("../services/gameService");
+const { getAll, getLatestsGames } = require('../services/gameService');
 
-const homeController = require("express").Router();
+const homeController = require('express').Router();
 
-homeController.get("/", async (req, res) => {
- 
+homeController.get('/', async (req, res) => {
   let games = [];
   const limit = Number(req.query.limit) || 0;
 

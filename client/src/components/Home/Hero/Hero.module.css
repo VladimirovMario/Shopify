@@ -1,5 +1,5 @@
 .hero {
-  font-family: "EB Garamond", serif;
+  font-family: 'EB Garamond', serif;
   color: var(--clr-white);
   margin-bottom: 64px;
   position: relative;
@@ -8,7 +8,7 @@
 }
 
 .hero::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
