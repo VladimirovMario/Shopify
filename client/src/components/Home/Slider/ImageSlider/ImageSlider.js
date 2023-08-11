@@ -53,18 +53,18 @@ export default function ImageSlider({ slides }) {
       >
         {slides.map((slide, slideIndex) => (
           <article
-            key={slide.title}
+            key={slide._id}
             className={styles["current-slide"]}
             style={reverseFlexDirection(slideIndex)}
           >
             <div className={styles["slide-content"]}>
               <h3 className={styles["slide-title"]}>{slide.title}</h3>
-              <p className={styles["slide-desc"]}> {slide.desc}</p>
+              <p className={styles["slide-desc"]}> {slide.description}</p>
             </div>
             <div className={styles["image-wrapper"]}>
               <img
                 className={styles["slide-img"]}
-                src={slide.url}
+                src={slide.imageUrl}
                 alt={slide.title}
               />
             </div>
