@@ -1,0 +1,18 @@
+.back-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.back-btn-wrapper {
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
+
+.back-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
