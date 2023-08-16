@@ -1,35 +1,18 @@
-import { useEffect, useReducer } from 'react';
 import ImageSlider from './ImageSlider/ImageSlider';
+import PromotionSlidesButtons from './PromotionSlidesButtons/PromotionSlidesButtons';
 import NewArrivals from './NewArrivals/NewArrivals';
+
+import { useSlidesContext } from '../../../contexts/PromotionSlidesContext';
+
 import styles from './Slider.module.css';
-import { getAllPromoSlides } from '../../../services/promoSliderService';
-import promotionSlidesReducer from '../../../reducers/promotionSlidesReducer';
 
 export default function Slider() {
-  const [slides, dispatch] = useReducer(promotionSlidesReducer, []);
-
-  useEffect(() => {
-    let ignore = false;
-
-    fetchData();
-    async function fetchData() {
-      if (!ignore) {
-        const promotionSlides = await getAllPromoSlides();
-        dispatch({
-          type: 'INITIAL_SLIDES',
-          slides: promotionSlides,
-        });
-      }
-    }
-
-    return () => {
-      ignore = true;
-    };
-  }, []);
+  const { slides, isSelectedSlide } = useSlidesContext();
 
   return (
     <section className={`${styles['slider-section']} section`}>
-      <ImageSlider slides={slides} />
+      {!isSelectedSlide && <ImageSlider slides={slides} />}
+      {isSelectedSlide && <PromotionSlidesButtons />}
       <NewArrivals />
     </section>
   );
