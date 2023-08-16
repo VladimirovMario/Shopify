@@ -153,7 +153,7 @@ export default function Create() {
               </label>
               <div className={styles['align-center-action']}>
                 <input
-                  className={'action-bnt create-btn btn'}
+                  className={'action-btn create-btn btn'}
                   type="submit"
                   value="Create"
                 />

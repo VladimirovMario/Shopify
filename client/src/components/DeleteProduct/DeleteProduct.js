@@ -128,7 +128,7 @@ export default function DeleteProduct() {
               </label>
               <div className={styles['align-center-action']}>
                 <input
-                  className={'action-bnt delete-btn btn'}
+                  className={'action-btn delete-btn btn'}
                   type="submit"
                   value="Delete"
                 />

@@ -56,7 +56,7 @@ export default function Catalog() {
             />
           </label>
 
-          <button className={'action-bnt edit-btn btn'}>Search</button>
+          <button className={'action-btn edit-btn btn'}>Search</button>
         </form>
 
         {loading && <Loader />}

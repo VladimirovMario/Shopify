@@ -116,7 +116,7 @@ export default function CommentCreate() {
               ></textarea>
             </label>
 
-            <button className={'action-bnt create-btn btn'}>
+            <button className={'action-btn create-btn btn'}>
               Send Comment
             </button>
           </form>

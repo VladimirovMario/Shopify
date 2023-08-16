@@ -189,7 +189,7 @@ export default function Edit() {
               </label>
               <div className={styles['align-center-action']}>
                 <input
-                  className={'action-bnt edit-btn btn'}
+                  className={'action-btn edit-btn btn'}
                   type="submit"
                   value="Edit"
                 />
