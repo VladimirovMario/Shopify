@@ -95,3 +95,10 @@
   font-size: 16px;
   padding: 6px;
 }
+
+.slide-editor-container {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1;
+}

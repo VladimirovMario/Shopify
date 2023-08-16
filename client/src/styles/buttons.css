@@ -62,9 +62,16 @@
   background-color: var(--clr-danger);
 }
 
+.slide-editor-btn {
+  background-color: var(--clr-malibu);
+  font-size: 16px;
+  opacity: 0.8;
+}
+
 .btn-edit:hover,
 .btn-delete:hover,
-.btn-comments:hover {
+.btn-comments:hover,
+.slide-editor-btn:hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
