@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useSlidesContext } from '../../../../contexts/PromotionSlidesContext';
 import styles from './ImageSlider.module.css';
 
 // TO DO fix the problem with responsive design
 export default function ImageSlider({ slides }) {
+  const { onCurrentIndexClick } = useSlidesContext();
+
   const timerRef = useRef(null);
   const [currIndex, setCurrentIndex] = useState(0);
   const slideWidth = 730;
@@ -91,6 +94,15 @@ export default function ImageSlider({ slides }) {
             <i className="fa-regular fa-circle"></i>
           </button>
         ))}
+      </div>
+
+      <div className={styles['slide-editor-container']}>
+        <button
+          className={'slide-editor-btn action-btn btn'}
+          onClick={() => onCurrentIndexClick(currIndex)}
+        >
+          Slide Editor
+        </button>
       </div>
     </div>
   );
