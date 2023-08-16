@@ -35,12 +35,14 @@ export const GameProvider = ({ children }) => {
       });
   }, []);
 
-  // Second useEffect is used for checking latestGames.length updates
-  useEffect(() => {
-    if (latestGames.length < limit) {
-      setLatestGames(games.slice(-limit).reverse());
-    }
-  }, [latestGames.length, games]);
+  // TODO: Refactor the logic to eliminate unnecessary re-renders.
+  // This functionality was implemented for cases where a user deletes a game,
+  // causing the 'latestGames' array to become smaller than the defined limit.
+  // useEffect(() => {
+  //   if (latestGames.length < limit) {
+  //     setLatestGames(games.slice(-limit).reverse());
+  //   }
+  // }, [latestGames.length, games]);
 
   // TODO extract the handlers
   const onCreateSubmit = async (data) => {
