@@ -6,7 +6,7 @@
   transition: all 300ms ease-in-out;
 }
 
-.action-bnt,
+.action-btn,
 .form-btn {
   border-radius: 6px;
   font-size: 21px;
@@ -27,6 +27,14 @@
   -webkit-transition: 300ms ease-in-out;
   -o-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
+}
+
+.back-btn {
+  font-size: 23px;
+  padding: 6px 6px;
+  color: var(--clr-malibu);
+  border-radius: 100px;
+  border: 1px solid var(--clr-white);
 }
 
 .btn-edit {
@@ -60,6 +68,10 @@
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.back-btn:hover {
+  border: 1px solid var(--clr-malibu);
 }
 
 .create-btn:hover {
