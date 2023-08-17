@@ -5,7 +5,7 @@ import SlidesAction from '../SlidesAction/SlidesAction';
 import styles from '../Slider.module.css';
 
 export default function PromotionSlidesButtons() {
-  const { resetSelectedSlide } = useSlidesContext();
+  const { slides, resetSelectedSlide } = useSlidesContext();
   const [selectedAction, setSelectedAction] = useState('');
 
   function handleCreateClick() {
@@ -22,6 +22,13 @@ export default function PromotionSlidesButtons() {
 
   function handleBackClick() {
     resetSelectedSlide();
+  }
+
+  const disabledDelete = slides.length <= 1;
+
+  let deleteBtnClass = 'action-btn delete-btn btn';
+  if (disabledDelete) {
+    deleteBtnClass = 'disabled action-btn delete-btn btn';
   }
 
   return (
@@ -41,10 +48,11 @@ export default function PromotionSlidesButtons() {
             Edit
           </button>
           <button
-            className={'action-btn delete-btn btn'}
+            className={deleteBtnClass}
             onClick={handleDeleteClick}
+            disabled={disabledDelete}
           >
-            Delete
+            {disabledDelete ? 'Final Content' : 'Delete'}
           </button>
           <BackButton handleBackClick={handleBackClick} />
         </div>
