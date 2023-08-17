@@ -9,9 +9,11 @@ import styles from './Slider.module.css';
 export default function Slider() {
   const { slides, isSelectedSlide } = useSlidesContext();
 
+  const availableSlides = slides.length > 0;
+
   return (
     <section className={`${styles['slider-section']} section`}>
-      {!isSelectedSlide && <ImageSlider slides={slides} />}
+      {!isSelectedSlide && availableSlides && <ImageSlider slides={slides} />}
       {isSelectedSlide && <PromotionSlidesButtons />}
       <NewArrivals />
     </section>
