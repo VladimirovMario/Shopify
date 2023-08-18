@@ -5,7 +5,12 @@ import {
   useReducer,
   useState,
 } from 'react';
-import { getAllPromoSlides } from '../services/promoSliderService';
+import {
+  getAllPromoSlides,
+  cretePromoSlide,
+  editPromoSlide,
+  deletePromoSlide,
+} from '../services/promoSliderService';
 import promotionSlidesReducer from '../reducers/promotionSlidesReducer';
 
 const PromotionSlidesContext = createContext(null);
@@ -41,6 +46,49 @@ function PromotionSlidesProvider({ children }) {
     setWantedSlide({});
   }
 
+  async function onCreateSubmit(promoSlide) {
+    const { title, description, imageUrl, isActive } = promoSlide;
+
+    try {
+      const promotionSlide = await cretePromoSlide({
+        title,
+        description,
+        imageUrl,
+        isActive,
+      });
+      return promotionSlide;
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+  async function onEditSubmit(promoSlide) {
+    const { _id, title, description, imageUrl, isActive } = promoSlide;
+    const id = _id;
+
+    try {
+      const promotionSlide = await editPromoSlide(id, {
+        title,
+        description,
+        imageUrl,
+        isActive,
+      });
+      return promotionSlide;
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+  async function onDeleteSubmit(promoSlideId) {
+    const id = promoSlideId;
+    try {
+      const deletedSlide = await deletePromoSlide(id);
+      return deletedSlide;
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
   const contextValues = {
     slides,
     wantedSlide,
@@ -48,6 +96,9 @@ function PromotionSlidesProvider({ children }) {
     dispatch,
     onCurrentIndexClick,
     resetSelectedSlide,
+    onCreateSubmit,
+    onEditSubmit,
+    onDeleteSubmit,
   };
 
   return (
