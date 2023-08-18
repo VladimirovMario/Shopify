@@ -6,23 +6,48 @@ import Label from './Label/Label';
 import Input from './Input/Input';
 
 export default function SlidesAction({ selectedAction }) {
-  const { wantedSlide, dispatch, resetSelectedSlide } = useSlidesContext();
+  const {
+    wantedSlide,
+    dispatch,
+    resetSelectedSlide,
+    onCreateSubmit,
+    onEditSubmit,
+    onDeleteSubmit,
+  } = useSlidesContext();
+
   const id = useId();
   const [formValues, setFormValues] = useState({
     _id: wantedSlide._id,
     title: selectedAction === 'create' ? '' : wantedSlide.title,
     description: selectedAction === 'create' ? '' : wantedSlide.description,
     imageUrl: selectedAction === 'create' ? '' : wantedSlide.imageUrl,
-    isActive: wantedSlide.isActive,
+    isActive: selectedAction === 'create' ? true : wantedSlide.isActive,
   });
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
+    const slide = {};
+
+    if (selectedAction === 'create') {
+      const createdSlide = await onCreateSubmit(formValues);
+      Object.assign(slide, createdSlide);
+    }
+
+    if (selectedAction === 'edit') {
+      const editedSlide = await onEditSubmit(formValues);
+      Object.assign(slide, editedSlide);
+    }
+
+    if (selectedAction === 'delete') {
+      const deletedSlide = await onDeleteSubmit(formValues._id);
+      Object.assign(slide, deletedSlide);
+    }
+
     dispatch({
       type: `${selectedAction}`,
-      id,
-      slide: formValues,
+      slide,
     });
+
     resetSelectedSlide();
   }
 
