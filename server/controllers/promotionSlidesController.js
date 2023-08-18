@@ -1,6 +1,8 @@
 const {
   getAllPromoSlides,
-  createPromoSlides,
+  cretePromoSlide,
+  editPromoSlide,
+  deletePromoSlide,
 } = require('../services/promotionSlidesService');
 
 const promotionSlidesController = require('express').Router();
@@ -17,10 +19,30 @@ promotionSlidesController.get('/', async (_, res) => {
 
 promotionSlidesController.post('/', async (req, res) => {
   const { imageUrl, title, description, isActive } = req.body;
-  const slides = { imageUrl, title, description, isActive };
+  const slide = { imageUrl, title, description, isActive };
 
   try {
-    const result = await createPromoSlides(slides);
+    const result = await cretePromoSlide(slide);
+    res.json(result);
+  } catch (error) {
+    const message = parseError(error);
+    res.status(400).json({ message });
+  }
+});
+
+promotionSlidesController.put('/:id', async (req, res) => {
+  try {
+    const result = await editPromoSlide(req.params.id, req.body);
+    res.json(result);
+  } catch (error) {
+    const message = parseError(error);
+    res.status(400).json({ message });
+  }
+});
+
+promotionSlidesController.delete('/:id', async (req, res) => {
+  try {
+    const result = await deletePromoSlide(req.params.id);
     res.json(result);
   } catch (error) {
     const message = parseError(error);
