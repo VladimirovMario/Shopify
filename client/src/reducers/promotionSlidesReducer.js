@@ -4,14 +4,13 @@ export default function promotionSlidesReducer(slides, action) {
       return [...action.slides];
     }
     case 'create': {
-      const { title, description, imageUrl } = action.slide;
-      const id = action.id;
-      return [{ id, title, description, imageUrl, isActive: true }, ...slides];
+      const { _id, title, description, imageUrl, isActive } = action.slide;
+      return [{ _id, title, description, imageUrl, isActive }, ...slides];
     }
     case 'edit': {
-      return slides.map((slide) =>
-        slide._id === action.slide._id ? action.slide : slide
-      );
+      return slides
+        .map((s) => (s._id === action.slide._id ? action.slide : s))
+        .filter((s) => s.isActive);
     }
     case 'delete': {
       return slides.filter((slide) => slide._id !== action.slide._id);
