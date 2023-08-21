@@ -11,11 +11,11 @@ async function cretePromoSlide(slide) {
 }
 
 async function editPromoSlide(id, data) {
-  const { title, description, imageUrl, isActive } = data;
+  const { title, slideDescription, imageUrl, isActive } = data;
 
   return await PromotionSlide.findByIdAndUpdate(
     id,
-    { title, description, imageUrl, isActive },
+    { title, slideDescription, imageUrl, isActive },
     { new: true }
   );
 }

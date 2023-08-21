@@ -47,12 +47,12 @@ function PromotionSlidesProvider({ children }) {
   }
 
   async function onCreateSubmit(promoSlide) {
-    const { title, description, imageUrl, isActive } = promoSlide;
+    const { title, slideDescription, imageUrl, isActive } = promoSlide;
 
     try {
       const promotionSlide = await cretePromoSlide({
         title,
-        description,
+        slideDescription,
         imageUrl,
         isActive,
       });
@@ -63,13 +63,13 @@ function PromotionSlidesProvider({ children }) {
   }
 
   async function onEditSubmit(promoSlide) {
-    const { _id, title, description, imageUrl, isActive } = promoSlide;
+    const { _id, title, slideDescription, imageUrl, isActive } = promoSlide;
     const id = _id;
 
     try {
       const promotionSlide = await editPromoSlide(id, {
         title,
-        description,
+        slideDescription,
         imageUrl,
         isActive,
       });

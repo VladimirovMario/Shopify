@@ -4,8 +4,8 @@ export default function promotionSlidesReducer(slides, action) {
       return [...action.slides];
     }
     case 'create': {
-      const { _id, title, description, imageUrl, isActive } = action.slide;
-      return [{ _id, title, description, imageUrl, isActive }, ...slides];
+      const { _id, title, slideDescription, imageUrl, isActive } = action.slide;
+      return [{ _id, title, slideDescription, imageUrl, isActive }, ...slides];
     }
     case 'edit': {
       return slides

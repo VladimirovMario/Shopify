@@ -18,8 +18,8 @@ promotionSlidesController.get('/', async (_, res) => {
 });
 
 promotionSlidesController.post('/', async (req, res) => {
-  const { imageUrl, title, description, isActive } = req.body;
-  const slide = { imageUrl, title, description, isActive };
+  const { imageUrl, title, slideDescription, isActive } = req.body;
+  const slide = { imageUrl, title, slideDescription, isActive };
 
   try {
     const result = await cretePromoSlide(slide);

@@ -22,7 +22,8 @@ export default function SlidesAction({ selectedAction }) {
     useForm({
       _id: selectedAction === 'create' ? '' : wantedSlide._id,
       title: selectedAction === 'create' ? '' : wantedSlide.title,
-      description: selectedAction === 'create' ? '' : wantedSlide.description,
+      slideDescription:
+        selectedAction === 'create' ? '' : wantedSlide.slideDescription,
       imageUrl: selectedAction === 'create' ? '' : wantedSlide.imageUrl,
       isActive: selectedAction === 'create' ? true : wantedSlide.isActive,
     });
@@ -50,16 +51,16 @@ export default function SlidesAction({ selectedAction }) {
         const deletedSlide = await onDeleteSubmit(values._id);
         Object.assign(slide, deletedSlide);
       }
+
+      dispatch({
+        type: `${selectedAction}`,
+        slide,
+      });
+
+      resetSelectedSlide();
     } else {
       alert('All fields are required!');
     }
-
-    dispatch({
-      type: `${selectedAction}`,
-      slide,
-    });
-
-    resetSelectedSlide();
   }
 
   function handleBackClick() {
@@ -116,13 +117,13 @@ export default function SlidesAction({ selectedAction }) {
             className={styles['input-label']}
             inputId={`${id}-description`}
             spanText="Description"
-            error={errors.description}
+            error={errors.slideDescription}
           >
             <textarea
               className={styles.description}
               id={`${id}-description`}
-              name="description"
-              value={values.description}
+              name="slideDescription"
+              value={values.slideDescription}
               onChange={onChangeHandler}
               placeholder="Find Perfect Match with PS4 and PS5 Games"
               cols="30"

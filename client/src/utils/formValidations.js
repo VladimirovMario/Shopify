@@ -57,6 +57,16 @@ export const formValidations = (e) => {
     } and ${maxLength} characters long`;
   }
 
+  // Promotion slides validations
+  if (
+    target === 'slideDescription' &&
+    (value.length <= minLength || value.length > middleLength)
+  ) {
+    errors.slideDescription = `should be between ${
+      minLength + 1
+    } and ${middleLength} characters long`;
+  }
+
   // Comments validations
   if (
     target === 'subject' &&

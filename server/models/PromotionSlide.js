@@ -9,7 +9,7 @@ const promotionSlideSchema = new Schema(
       required: true,
       minlength: [3, 'Title must be at least 3 characters long'],
     },
-    description: {
+    slideDescription: {
       type: String,
       required: true,
       minlength: [4, 'Description should be a minimum of 4 characters long!'],

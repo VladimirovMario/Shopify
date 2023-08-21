@@ -62,7 +62,7 @@ export default function ImageSlider({ slides }) {
           >
             <div className={styles['slide-content']}>
               <h3 className={styles['slide-title']}>{slide.title}</h3>
-              <p className={styles['slide-desc']}> {slide.description}</p>
+              <p className={styles['slide-desc']}> {slide.slideDescription}</p>
             </div>
             <div className={styles['image-wrapper']}>
               <img
