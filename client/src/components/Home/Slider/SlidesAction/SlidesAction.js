@@ -5,6 +5,7 @@ import styles from '../Slider.module.css';
 import Label from './Label/Label';
 import Input from './Input/Input';
 import { useForm } from '../../../../hooks/useForm';
+import { getFieldsWithEmptyStrings } from '../../../../utils/getFieldsWithEmptyStrings';
 
 export default function SlidesAction({ selectedAction }) {
   const {
@@ -32,11 +33,10 @@ export default function SlidesAction({ selectedAction }) {
     e.preventDefault();
     const slide = {};
 
-    const nonEmptyStringFields = Object.values(values).every((v) =>
-      typeof v === 'string' ? v.trim() !== '' : v
-    );
+    // Filter out fields with empty strings
+    const fieldsWithEmptyStrings = getFieldsWithEmptyStrings(values);
 
-    if (nonEmptyStringFields) {
+    if (fieldsWithEmptyStrings.length === 0) {
       if (selectedAction === 'create') {
         const createdSlide = await onCreateSubmit(values);
         Object.assign(slide, createdSlide);
