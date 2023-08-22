@@ -1,11 +1,12 @@
 import { useId } from 'react';
 import { useSlidesContext } from '../../../../contexts/PromotionSlidesContext';
-import BackButton from '../../../Shared/Buttons/BackButton/BackButton';
-import styles from '../Slider.module.css';
-import Label from './Label/Label';
-import Input from './Input/Input';
 import { useForm } from '../../../../hooks/useForm';
 import { getFieldsWithEmptyStrings } from '../../../../utils/getFieldsWithEmptyStrings';
+import Label from './Label/Label';
+import Input from './Input/Input';
+import SlideActionImage from './SlideActionImage/SlideActionImage';
+import BackButton from '../../../Shared/Buttons/BackButton/BackButton';
+import styles from '../Slider.module.css';
 
 export default function SlidesAction({ selectedAction }) {
   const {
@@ -19,39 +20,44 @@ export default function SlidesAction({ selectedAction }) {
 
   const id = useId();
 
+  const isCreateAction = selectedAction === 'create';
+  const isEditAction = selectedAction === 'edit';
+  const isDeleteAction = selectedAction === 'delete';
+
   const { values, errors, onChangeHandler, onValidateForm, onCheckboxHandler } =
     useForm({
-      _id: selectedAction === 'create' ? '' : wantedSlide._id,
-      title: selectedAction === 'create' ? '' : wantedSlide.title,
-      slideDescription:
-        selectedAction === 'create' ? '' : wantedSlide.slideDescription,
-      imageUrl: selectedAction === 'create' ? '' : wantedSlide.imageUrl,
-      isActive: selectedAction === 'create' ? true : wantedSlide.isActive,
+      _id: isCreateAction ? '' : wantedSlide._id,
+      title: isCreateAction ? '' : wantedSlide.title,
+      slideDescription: isCreateAction ? '' : wantedSlide.slideDescription,
+      imageUrl: isCreateAction ? '' : wantedSlide.imageUrl,
+      isActive: isCreateAction ? true : wantedSlide.isActive,
     });
 
   async function onSubmit(e) {
     e.preventDefault();
-    const slide = {};
+    const slide = {}; // Initialize an empty object to store the result of the action
 
     // Filter out fields with empty strings
     const fieldsWithEmptyStrings = getFieldsWithEmptyStrings(values);
 
+    // Check if there are no empty string fields
     if (fieldsWithEmptyStrings.length === 0) {
-      if (selectedAction === 'create') {
-        const createdSlide = await onCreateSubmit(values);
-        Object.assign(slide, createdSlide);
+      let submittedSlide;
+
+      // Perform action based on selectedAction
+      if (isCreateAction) {
+        submittedSlide = await onCreateSubmit(values);
       }
 
-      if (selectedAction === 'edit') {
-        const editedSlide = await onEditSubmit(values);
-        Object.assign(slide, editedSlide);
+      if (isEditAction) {
+        submittedSlide = await onEditSubmit(values);
       }
 
-      if (selectedAction === 'delete') {
-        const deletedSlide = await onDeleteSubmit(values._id);
-        Object.assign(slide, deletedSlide);
+      if (isDeleteAction) {
+        submittedSlide = await onDeleteSubmit(values._id);
       }
 
+      Object.assign(slide, submittedSlide);
       dispatch({
         type: `${selectedAction}`,
         slide,
@@ -67,9 +73,8 @@ export default function SlidesAction({ selectedAction }) {
     resetSelectedSlide();
   }
 
-  const showImageContainer =
-    selectedAction === 'edit' || selectedAction === 'delete';
-  const isDisabled = selectedAction === 'delete';
+  const showImageContainer = isEditAction || isDeleteAction;
+  const isDisabled = isDeleteAction;
 
   return (
     <>
@@ -139,24 +144,13 @@ export default function SlidesAction({ selectedAction }) {
           />
         </form>
         {showImageContainer && (
-          <div className={styles['image-wrapper']}>
-            <img src={wantedSlide.imageUrl} alt={wantedSlide.title} />
-            <Label
-              className={styles['input-label-checkbox']}
-              inputId={`${id}-isActive`}
-              spanText="Active promotion"
-            >
-              <input
-                className={styles['input-checkbox']}
-                id={`${id}-isActive`}
-                name="isActive"
-                type="checkbox"
-                checked={values.isActive}
-                onChange={onCheckboxHandler}
-                disabled={isDisabled}
-              />
-            </Label>
-          </div>
+          <SlideActionImage
+            wantedSlide={wantedSlide}
+            id={id}
+            isActive={values.isActive}
+            onCheckboxHandler={onCheckboxHandler}
+            isDisabled={isDisabled}
+          />
         )}
       </div>
     </>
