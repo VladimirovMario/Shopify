@@ -13,7 +13,7 @@
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   transition: all 300ms ease-in-out;
   box-shadow: -2px -1px 12px 1px var(--clr-pirate-gold);
 }
