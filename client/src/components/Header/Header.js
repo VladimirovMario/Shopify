@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import styles from './Header.module.css';
+import SearchBar from '../Shared/SearchBar/SearchBar';
 
 export default function Header() {
   const { isAuthenticated } = useAuthContext();
@@ -23,21 +24,7 @@ export default function Header() {
         </ul>
 
         {/* <!-- Search form --> */}
-        <form className={styles['search-bar']}>
-          <input
-            className={styles['search-input']}
-            id="search"
-            type="search"
-            autoComplete="off"
-            placeholder="Start searching for..."
-            name="search"
-          />
-          <button className={styles['search-btn']}>
-            <div className={styles['search-icon']}>
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </div>
-          </button>
-        </form>
+        <SearchBar />
 
         {/* <!-- Action icons --> */}
         <div className={styles['top-icons-wrapper']}>

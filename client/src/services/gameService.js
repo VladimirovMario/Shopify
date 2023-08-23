@@ -19,8 +19,8 @@ export const getAllGames = async () => {
   return await request.get(endpoints.allGames);
 };
 
-export const searchGames = async (searchValue) => {
-  const query = `?search=${searchValue}`;
+export const searchGames = async (searchQuery) => {
+  const query = `?search=${searchQuery}`;
   return await request.get(endpoints.allGames + query);
 };
 

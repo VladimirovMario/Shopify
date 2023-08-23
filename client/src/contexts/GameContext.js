@@ -111,10 +111,11 @@ export const GameProvider = ({ children }) => {
   // TODO see examples for search in React
   // Make own useState and then check if it's necessary to render search or games state.
   // If there are search results, just show them and keep games state untouched.
-  const searchGamesHandler = async (title) => {
+  const searchGamesHandler = async (searchQuery) => {
     // TODO compare the old state and if there are no changes, don't set new one.
+
     try {
-      const search = await searchGames(title);
+      const search = await searchGames(searchQuery);
       setGames(search);
     } catch (error) {
       alert(error.message);

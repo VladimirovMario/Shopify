@@ -30,11 +30,9 @@ function App() {
     <AuthProvider>
       {/* In case of Error or Success */}
       <InfoMessage />
-
-      <Header />
-
-      <main>
-        <GameProvider>
+      <GameProvider>
+        <Header />
+        <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<Catalog />} />
@@ -59,9 +57,8 @@ function App() {
 
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </GameProvider>
-      </main>
-
+        </main>
+      </GameProvider>
       <Footer />
     </AuthProvider>
   );
