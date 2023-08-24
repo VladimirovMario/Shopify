@@ -16,12 +16,18 @@ const { parseError } = require('../util/parser');
 
 gameController.get('/', async (req, res) => {
   let items = [];
-  if (req.query.search !== undefined) {
-    items = await getAll(req.query.search);
-  } else {
-    items = await getAll();
+
+  try {
+    if (req.query.search !== undefined) {
+      items = await getAll(req.query.search.trim());
+    } else {
+      items = await getAll();
+    }
+    res.json(items);
+  } catch (error) {
+    const message = parseError(error);
+    res.status(400).json({ message });
   }
-  res.json(items);
 });
 
 gameController.post('/', hasUser(), async (req, res) => {

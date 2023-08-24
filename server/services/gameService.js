@@ -2,12 +2,22 @@ const mongoose = require('mongoose');
 const Game = require('../models/Game');
 const Comment = require('../models/Comment');
 
-async function getAll(search) {
-  const query = {};
-  if (search) {
-    query.title = new RegExp(search, 'i');
+async function getAll(searchQuery) {
+  let queryTitle = {};
+  let queryGenre = {};
+  const initialProperties = 'title description imageUrl genre price';
+
+  try {
+    if (searchQuery) {
+      queryTitle = { title: new RegExp(searchQuery, 'i') };
+      queryGenre = { genre: new RegExp(searchQuery, 'i') };
+    }
+    return await Game.find({ $or: [queryTitle, queryGenre] }).select(
+      initialProperties
+    );
+  } catch (error) {
+    throw new Error(error);
   }
-  return Game.find(query);
 }
 
 async function createGame(game) {
@@ -44,7 +54,11 @@ async function updateById(id, body) {
 }
 
 async function getLatestsGames(limit) {
-  return Game.find().sort({ created_at: -1 }).limit(limit);
+  const initialProperties = 'title description imageUrl genre price';
+  return Game.find()
+    .sort({ created_at: -1 })
+    .limit(limit)
+    .select(initialProperties);
 }
 
 async function addGameToFavorites(gameId, userId) {
