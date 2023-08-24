@@ -76,20 +76,29 @@ export default function ImageSlider({ slides }) {
       </div>
 
       {/* arrow buttons logic */}
-      <button className={styles['left-arrow']} onClick={goToPrevious}>
+      <button
+        className={styles['left-arrow']}
+        aria-label="Go to previous promotion slide"
+        onClick={goToPrevious}
+      >
         <i className="fa-solid fa-chevron-left"></i>
       </button>
-      <button className={styles['right-arrow']} onClick={goToNext}>
+      <button
+        className={styles['right-arrow']}
+        aria-label="Go to next promotion slide"
+        onClick={goToNext}
+      >
         <i className="fa-solid fa-chevron-right"></i>
       </button>
 
       {/* Dots section */}
       <div className={styles['dots-wrapper']}>
-        {slides.map((_, slideIndex) => (
+        {slides.map((slide, slideIndex) => (
           <button
             key={slideIndex}
             className={styles.dot}
             onClick={() => goToSlide(slideIndex)}
+            aria-label={`Go to ${slide.title} promotion slide`}
           >
             <i className="fa-regular fa-circle"></i>
           </button>
@@ -98,6 +107,7 @@ export default function ImageSlider({ slides }) {
 
       <div className={styles['slide-editor-container']}>
         <button
+          aria-label="Opens the promotion slides editor for performing all CRUD operations"
           className={'slide-editor-btn action-btn btn'}
           onClick={() => onCurrentIndexClick(currIndex)}
         >

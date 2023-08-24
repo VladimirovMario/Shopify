@@ -54,7 +54,10 @@ export default function PromotionSlidesButtons() {
           >
             {disabledDelete ? 'Final Content' : 'Delete'}
           </button>
-          <BackButton handleBackClick={handleBackClick} />
+          <BackButton
+            handleBackClick={handleBackClick}
+            ariaLabelText="Go to promotion slides home screen"
+          />
         </div>
       )}
       {selectedAction && <SlidesAction selectedAction={selectedAction} />}
