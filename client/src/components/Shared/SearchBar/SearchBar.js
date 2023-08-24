@@ -16,11 +16,11 @@ export default function SearchBar() {
   function onSubmit(e) {
     e.preventDefault();
 
-    if (searchQuery) {
+    if (searchQuery && searchQuery.trim() !== '') {
       if (location.pathname !== '/catalog') {
         navigate('/catalog', { state: location.search });
       }
-      searchGamesHandler(searchQuery);
+      searchGamesHandler(searchQuery.trim());
     } else {
       searchGamesHandler('');
       setSearchParams({});
