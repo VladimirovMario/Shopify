@@ -6,6 +6,8 @@ export default function Hero() {
       <img
         className={styles['hero-img']}
         src="/static/images/hero-img.jpg"
+        width="1200"
+        height="800"
         alt="hero-img.jpg"
       />
 

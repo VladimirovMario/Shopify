@@ -17,7 +17,7 @@
 }
 
 .game-title {
-  color: var(--clr-abbey);
+  color: var(--clr-rangoon-green);
   margin-bottom: 24px;
 }
 
@@ -57,7 +57,7 @@
 .message,
 .input-subject {
   background-color: transparent;
-  border: 1px solid var(--clr-abbey);
+  border: 1px solid var(--clr-rangoon-green);
   border-radius: 6px;
   padding: 8px;
 }

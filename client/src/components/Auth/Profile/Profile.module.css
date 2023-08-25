@@ -1,7 +1,7 @@
 /* TODO fix the profile page */
 .profile-card {
   font-family: 'EB Garamond', serif;
-  color: var(--clr-abbey);
+  color: var(--clr-rangoon-green);
 
   display: flex;
   justify-content: space-between;

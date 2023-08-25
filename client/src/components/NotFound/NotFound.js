@@ -11,7 +11,7 @@ export default function NotFound() {
         <h2 className={styles['not-found-title']}>404</h2>
         <p className={styles['not-found-desc']}>
           The Page you are looking for doesn't exist or another error occurred.
-          Go to
+          Go to{' '}
           <Link className={styles['not-found-link']} to="/">
             Shopify
           </Link>

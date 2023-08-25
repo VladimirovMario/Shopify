@@ -18,10 +18,13 @@
 }
 
 .details-card .details-image-wrapper {
+  padding: 12px 6px;
+  align-self: flex-start;
   width: 40%;
 }
 
 .details-card .details-card-image {
+  /* filter: drop-shadow(0 0 12px #121212); */
   height: 100%;
   width: 100%;
   object-fit: cover;

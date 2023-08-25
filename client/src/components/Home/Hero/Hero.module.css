@@ -1,7 +1,7 @@
 .hero {
   font-family: 'EB Garamond', serif;
   color: var(--clr-white);
-  margin-bottom: 64px;
+  margin-bottom: 24px;
   position: relative;
   overflow: hidden;
   /* height: 70vh; */

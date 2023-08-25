@@ -79,7 +79,7 @@
 .input-img-url {
   width: 80%;
   background-color: transparent;
-  border: 1px solid var(--clr-abbey);
+  border: 1px solid var(--clr-rangoon-green);
   padding: 6px;
   border-radius: 6px;
 }
@@ -92,7 +92,7 @@
 .description {
   resize: none;
   background-color: transparent;
-  border: 1px solid var(--clr-abbey);
+  border: 1px solid var(--clr-rangoon-green);
   padding: 6px;
   border-radius: 6px;
   margin-bottom: 12px;
