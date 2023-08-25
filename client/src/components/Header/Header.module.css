@@ -114,14 +114,14 @@
 }
 
 .main-nav-icon i {
-  color: white;
+  color: var(--clr-firefly);
   font-size: 24px;
   margin-right: 6px;
 }
 
 .categories-link {
-  font-weight: 600;
-  color: var(--clr-white);
+  font-weight: 500;
+  color: var(--clr-firefly);
   letter-spacing: 1px;
 }
 

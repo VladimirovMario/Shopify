@@ -107,7 +107,6 @@ export default function ImageSlider({ slides }) {
 
       <div className={styles['slide-editor-container']}>
         <button
-          aria-label="Opens the promotion slides editor for performing all CRUD operations"
           className={'slide-editor-btn action-btn btn'}
           onClick={() => onCurrentIndexClick(currIndex)}
         >
