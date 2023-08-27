@@ -13,6 +13,7 @@ The Shopify application has been deployed using different services:
 - **Database (MongoDB):** The database for the application is hosted on MongoDB Atlas. It ensures seamless data storage and retrieval.
 
 ## My Skills
+
 [![My Skills](https://skillicons.dev/icons?i=react,js,html,css,nodejs,mongodb,vscode,stackoverflow)](https://skillicons.dev)
 
 Link to previous commits on this project: [Link to Commits](https://github.com/VladimirovMario/JS-Front-End/tree/main/02.%20React%20-2023/01.%20Shopify)
@@ -22,10 +23,12 @@ Link to previous commits on this project: [Link to Commits](https://github.com/V
 Shopify offers the following features:
 
 - **User Authentication:**
+
   - Register as a regular user
   - Login and logout
 
 - **Game Management:**
+
   - View games in descending order
   - View all games
   - Search games by title
@@ -35,6 +38,7 @@ Shopify offers the following features:
   - Delete a game
 
 - **Favorites and Profile:**
+
   - Add games to favorites
   - Access a profile area displaying favorite games
 
@@ -56,38 +60,42 @@ To start the server:
 ## Upcoming Features
 
 - **Admin Role:**
+
   - Enhanced role-based access control for administrators
 
 - **Shopping Cart:**
   - Ability to add games to the shopping basket
 
-
 ### [Link to provided data](https://github.com/VladimirovMario/JS-Front-End/tree/main/02.%20React%20-2023/01.%20Shopify/data)
 
 If you choose to use the provided data for testing, three sample users are available:
+
 - `peter@abv.bg : 123`
 - `jane@gmal.com : 123456`
 - `george@abv.bg : 123`
-
 
 ## Screenshots
 
 ### Home page
 
-![home-page-shopify](https://user-images.githubusercontent.com/103949296/230657555-4da79923-714a-48c8-b762-a3753739cff8.png)
+![home-page-shopify](https://github.com/VladimirovMario/Shopify/assets/103949296/019b0668-0860-4f17-b783-ff44be48481b)
 
 ### Catalog
 
-![catalog-shopify](https://user-images.githubusercontent.com/103949296/230731921-8aa5438a-952f-4227-9fe1-78217c57331e.png)
+![catalog-shopify](https://github.com/VladimirovMario/Shopify/assets/103949296/2e007d73-b741-49d1-a73a-7b2eea3304e0)
 
 ### Profile
 
-![profile-shopify](https://user-images.githubusercontent.com/103949296/230658287-8624d7cd-abd7-4ce6-a37d-288511cc5dc1.png)
+![profile-shopify](https://github.com/VladimirovMario/Shopify/assets/103949296/19e60fc6-b8bb-49f8-a963-584dfe2989ee)
 
-### Edit page
+### Create page
 
-![edit-page-shopify](https://user-images.githubusercontent.com/103949296/230657687-42b6de54-38e4-4c3e-9f4a-69eea21f1fc2.png)
+![create-page-shopify](https://github.com/VladimirovMario/Shopify/assets/103949296/e1b72d90-ec14-497f-a4a1-b14e79ff439e)
 
-###  Responsive view at 360px
+### Details page
 
-![home-responsive-page-shopify ](https://github.com/VladimirovMario/Shopify/assets/103949296/6fd8c704-2502-4060-9e43-28454c97957c)
+![details-shopify](https://github.com/VladimirovMario/Shopify/assets/103949296/d738cff3-84c1-4155-a483-cfd9a1f79744)
+
+### Responsive view at 360px
+
+![catalog-responsive-page-shopify](https://github.com/VladimirovMario/Shopify/assets/103949296/b5ae4570-b329-45a2-b712-4ae191628b11)
