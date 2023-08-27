@@ -1,0 +1,13 @@
+.search-result-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.drop-down-divider {
+  height: 1px;
+  background-color: var(--clr-malibu);
+  width: 100%;
+  margin-bottom: 6px;
+}

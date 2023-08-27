@@ -4,7 +4,6 @@ import {
   gameServiceFactory,
   getAllGames,
   getLatestsGames,
-  searchGames,
 } from '../services/gameService';
 import { commentServiceFactory } from '../services/commentService';
 
@@ -108,18 +107,16 @@ export const GameProvider = ({ children }) => {
     }
   };
 
-  // TODO see examples for search in React
-  // Make own useState and then check if it's necessary to render search or games state.
-  // If there are search results, just show them and keep games state untouched.
-  const searchGamesHandler = async (searchQuery) => {
-    // TODO compare the old state and if there are no changes, don't set new one.
-
-    try {
-      const search = await searchGames(searchQuery);
-      setGames(search);
-    } catch (error) {
-      alert(error.message);
-    }
+  // TODO check if the two arrays are equal and skip the setter function
+  // How to compare arrays in JavaScript?
+  // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+  // Object comparison in JavaScript [duplicate]
+  // https://stackoverflow.com/questions/1068834/object-comparison-in-javascript/1144249#1144249
+  const searchGamesHandler = (searchResults) => {
+    // console.time('diff');
+    setGames(searchResults);
+    // console.timeEnd('diff');
+    // diff: 0ms - timer ended
   };
 
   // Comments functionality
