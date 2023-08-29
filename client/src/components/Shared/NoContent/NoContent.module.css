@@ -1,0 +1,5 @@
+.no-publications {
+  height: 40vh;
+  text-align: center;
+  color: var(--clr-headings-primary);
+}

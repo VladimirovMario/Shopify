@@ -4,9 +4,10 @@ import { useParams } from 'react-router-dom';
 import CommentsList from './Comments/CommentsList/CommentsList';
 import DetailsProduct from './DetailsProduct/DetailsProduct';
 
-import styles from './Details.module.css';
 import { getById } from '../../services/gameService';
 import { getCommentsById } from '../../services/commentService';
+
+import styles from './Details.module.css';
 
 export default function Details() {
   const { gameId } = useParams();
@@ -24,7 +25,6 @@ export default function Details() {
         alert(error.message);
       });
     // TODO optimize it
-    // I have to think how to change the state without re render.
   }, [gameId, game.comments?.length]);
 
   return (

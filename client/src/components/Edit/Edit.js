@@ -66,7 +66,7 @@ export default function Edit() {
         </div>
 
         <form onSubmit={onSubmit} className={styles['form-container']}>
-          <h3 className={styles['form-container-title']}>Create Publication</h3>
+          <h3 className={styles['form-container-title']}>Edit Publication</h3>
           <p className={styles['form-container-desc']}>
             Add your own masterpiece!
           </p>
