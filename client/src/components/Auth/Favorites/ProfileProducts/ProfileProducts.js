@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
+import { useFavoritesContext } from '../../../../contexts/GameFavoritesContext';
 import { textSubstring } from '../../../../utils/textSubstring';
+
 import styles from './ProfileProduct.module.css';
 
-export const ProfileProducts = ({
-  _id,
-  imageUrl,
-  price,
-  title,
-  onFavoriteRemoveHandler,
-}) => {
+export default function ProfileProducts({ _id, imageUrl, price, title }) {
+  const { dispatch, onFavoriteRemoveHandler } = useFavoritesContext();
+
   const onFavoriteRemoveClick = (e, gameId) => {
     e.preventDefault();
+    dispatch({
+      type: 'FAVORITE_REMOVE',
+      gameId,
+    });
     onFavoriteRemoveHandler(gameId);
   };
 
@@ -43,7 +45,7 @@ export const ProfileProducts = ({
 
           <div className={styles['content']}>
             <h3 className={styles['content-title']}>
-              {title ? textSubstring(title, 28) : title}
+              {title ? textSubstring(title, 'title') : title}
             </h3>
             <div className={styles['icon-wrapper']}>
               <p className={styles['content-price']}>{price}$</p>
@@ -62,4 +64,4 @@ export const ProfileProducts = ({
       </Link>
     </li>
   );
-};
+}

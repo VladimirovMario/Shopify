@@ -1,25 +1,31 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../../contexts/AuthContext';
-import { useGameContext } from '../../../contexts/GameContext';
+import { useFavoritesContext } from '../../../contexts/GameFavoritesContext';
+
 import styles from './DetailsProduct.module.css';
 
 export default function DetailsProduct({ game }) {
   const { userId, isAuthenticated } = useAuthContext();
-  const { addGameToFavorites } = useGameContext();
+  const { favoritesGames, dispatch, addGameToFavorites } =
+    useFavoritesContext();
+
   const navigate = useNavigate();
 
+  // Checking if the user already add this game to his favorites
+  const notInFavoritesList = favoritesGames.every((f) => f._id !== game._id);
   const isOwner = userId ? userId === game._ownerId : false;
 
-  const onClickAddFavorite = async (e) => {
-    e.preventDefault();
-    // Checking if the user already add this game to his favorites
-    if (game.users.includes(userId) === false) {
-      addGameToFavorites(game._id);
+  async function onClickAddFavorite() {
+    if (notInFavoritesList) {
+      const favorite = await addGameToFavorites(game._id);
+      dispatch({
+        type: 'FAVORITE_ADD',
+        favorite,
+      });
     }
-    // navigate in every case
     // TODO Implement a message of success and stay on current page and browse for more
-    navigate('/auth/profile');
-  };
+    navigate('/auth/favorites');
+  }
 
   return (
     <div className={styles['details-card']}>
@@ -38,6 +44,7 @@ export default function DetailsProduct({ game }) {
 
         <div className={styles['icon-wrapper']}>
           <p className={styles['content-price']}>{game.price}$</p>
+
           <div className={'icon-btn'}>
             {/* <!-- User only --> */}
             {isAuthenticated && (
@@ -58,7 +65,7 @@ export default function DetailsProduct({ game }) {
         <div className={styles['buttons-wrapper']}>
           {isOwner && (
             <>
-              <Link to={`/edit/${game._id}`} className={`btn-edit btn`}>
+              <Link to={`/edit/${game._id}`} className={'btn-edit btn'}>
                 Edit
               </Link>
               <Link to={`/delete/${game._id}`} className={'btn-delete btn'}>

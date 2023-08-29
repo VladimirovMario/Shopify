@@ -8,6 +8,7 @@ import Edit from './components/Edit/Edit';
 import DeleteProduct from './components/DeleteProduct/DeleteProduct';
 import CommentCreate from './components/Details/Comments/CommentCreate/CommentCreate';
 import Profile from './components/Auth/Profile/Profile';
+import Favorites from './components/Auth/Favorites/Favorites';
 import Logout from './components/Auth/Logout/Logout';
 import Register from './components/Auth/Register/Register';
 import Login from './components/Auth/Login/Login';
@@ -17,6 +18,7 @@ import Footer from './components/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { GameProvider } from './contexts/GameContext';
+import { GameFavoritesProvider } from './contexts/GameFavoritesContext';
 import { RouteGuard } from './components/common/RouteGuard';
 import { LoggedUserGuard } from './components/common/LoggedUserGuard';
 
@@ -31,33 +33,36 @@ function App() {
       {/* In case of Error or Success */}
       <InfoMessage />
       <GameProvider>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/catalog/:gameId" element={<Details />} />
+        <GameFavoritesProvider>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/catalog/:gameId" element={<Details />} />
 
-            <Route element={<RouteGuard />}>
-              <Route path="/create-product" element={<Create />} />
-              <Route path="/edit/:gameId" element={<Edit />} />
-              <Route path="/delete/:gameId" element={<DeleteProduct />} />
-              <Route
-                path="/create-comment/:gameId"
-                element={<CommentCreate />}
-              />
-              <Route path="/auth/profile" element={<Profile />} />
-              <Route path="/auth/logout" element={<Logout />} />
-            </Route>
+              <Route element={<RouteGuard />}>
+                <Route path="/create-product" element={<Create />} />
+                <Route path="/edit/:gameId" element={<Edit />} />
+                <Route path="/delete/:gameId" element={<DeleteProduct />} />
+                <Route
+                  path="/create-comment/:gameId"
+                  element={<CommentCreate />}
+                />
+                <Route path="/auth/profile" element={<Profile />} />
+                <Route path="/auth/favorites" element={<Favorites />} />
+                <Route path="/auth/logout" element={<Logout />} />
+              </Route>
 
-            <Route element={<LoggedUserGuard />}>
-              <Route path="/auth/register" element={<Register />} />
-              <Route path="/auth/login" element={<Login />} />
-            </Route>
+              <Route element={<LoggedUserGuard />}>
+                <Route path="/auth/register" element={<Register />} />
+                <Route path="/auth/login" element={<Login />} />
+              </Route>
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </GameFavoritesProvider>
       </GameProvider>
       <Footer />
     </AuthProvider>

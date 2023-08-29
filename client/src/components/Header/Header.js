@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import styles from './Header.module.css';
 import SearchBar from '../Shared/SearchBar/SearchBar';
+import UserFavorites from './UserFavorites.js/UserFavorites';
 
 export default function Header() {
   const { isAuthenticated } = useAuthContext();
+
   const combinedStyles = `${styles['profile-icon-wrapper']} ${styles['dropdown-nav']}`;
 
   return (
@@ -81,17 +83,10 @@ export default function Header() {
             </ul>
           </div>
 
-          <div className={styles['wishlist-icon-wrapper']}>
-            <img
-              className={styles['wishlist-icon-img']}
-              src="/static/icons/heart(128).png"
-              alt="wishlist-icon"
-            />
-            <div className={styles['wishlist-count']}>
-              <span>12</span>
-            </div>
-          </div>
+          {/* User favorites */}
+          <UserFavorites />
 
+          {/* User shopping cart */}
           <div className={styles['shopping-cart-wrapper']}>
             <img
               className={styles['shopping-cart-img']}

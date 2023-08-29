@@ -1,38 +1,40 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
-import { useGameContext } from '../../contexts/GameContext';
+import { useFavoritesContext } from '../../contexts/GameFavoritesContext';
 import { textSubstring } from '../../utils/textSubstring';
-import styles from './ProductPs4.module.css';
 
-// users: Array []
+import styles from './ProductPs4.module.css';
 
 export default function ProductPs4({
   _id,
-  _ownerId,
-  created_at,
   description,
   genre,
   imageUrl,
   price,
   title,
-  updatedAt,
-  users,
-  usersCount,
 }) {
-  const { userId, isAuthenticated } = useAuthContext();
-  const { addGameToFavorites } = useGameContext();
+  const { isAuthenticated } = useAuthContext();
+  const { favoritesGames, dispatch, addGameToFavorites } =
+    useFavoritesContext();
+
   const navigate = useNavigate();
 
-  const onClickAddFavorite = async (e) => {
+  // Checking if the user already add this game to his favorites
+  const notInFavoritesList = favoritesGames.every((f) => f._id !== _id);
+
+  async function onClickAddFavorite(e) {
     e.preventDefault();
-    // Checking if the user already add this game to his favorites
-    if (users.includes(userId) === false) {
-      addGameToFavorites(_id);
+
+    if (notInFavoritesList) {
+      const favorite = await addGameToFavorites(_id);
+      dispatch({
+        type: 'FAVORITE_ADD',
+        favorite,
+      });
     }
-    // navigate in every case
     // TODO Implement a message of success and stay on current page and browse for more
-    navigate('/auth/profile');
-  };
+    navigate('/auth/favorites');
+  }
 
   return (
     <li>
@@ -59,8 +61,9 @@ export default function ProductPs4({
             <div className={styles['icon-wrapper']}>
               <p className={styles['content-price']}>{price}$</p>
 
+              {/* Action container */}
               <div className={styles['icon-btn']}>
-                {/* <!-- User only --> */}
+                {/* <!-- Authenticated users only --> */}
                 {isAuthenticated && (
                   <span
                     className={`${styles['heart-icon']} btn`}
@@ -70,6 +73,7 @@ export default function ProductPs4({
                   </span>
                 )}
 
+                {/* Shopping cart button */}
                 <span className={`${styles['shopping-icon']} btn`}>
                   <i className="fa-solid fa-cart-shopping"></i>
                 </span>

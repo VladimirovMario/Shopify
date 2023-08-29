@@ -30,17 +30,3 @@
 .profile-card-info h3 {
   margin-bottom: 12px;
 }
-
-/* TODO extract css in one module and reuse it*/
-.product-wrapper {
-  max-width: calc(100% - 2 * 100px);
-  margin: 0 auto;
-}
-
-.product-ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px 12px;
-  border-radius: 6px;
-  background-color: transparent;
-}

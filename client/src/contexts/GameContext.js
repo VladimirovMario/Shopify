@@ -98,15 +98,6 @@ export const GameProvider = ({ children }) => {
     }
   };
 
-  const addGameToFavorites = async (gameId) => {
-    try {
-      // TODO the result is the whole game, so we can add game title to success message
-      await gameService.addGameToFavorites(gameId);
-    } catch (error) {
-      alert(error.message);
-    }
-  };
-
   // TODO check if the two arrays are equal and skip the setter function
   // How to compare arrays in JavaScript?
   // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
@@ -141,7 +132,6 @@ export const GameProvider = ({ children }) => {
     onCreateSubmit,
     onEditSubmit,
     onDeleteSubmit,
-    addGameToFavorites,
     createComment,
   };
 
