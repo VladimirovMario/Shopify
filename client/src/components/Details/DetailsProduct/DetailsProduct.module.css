@@ -75,14 +75,13 @@
   margin-bottom: 24px;
 }
 
-.heart-icon,
-.shopping-icon {
-  font-size: 32px;
+.action-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: var(--clr-abbey);
-}
-
-.heart-icon {
-  margin-right: 12px;
+  line-height: 1;
+  font-size: 32px;
 }
 
 .heart-icon:hover,

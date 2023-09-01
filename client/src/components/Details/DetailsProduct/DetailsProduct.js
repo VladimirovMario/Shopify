@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import { useFavoritesContext } from '../../../contexts/GameFavoritesContext';
+import IconHeart from '../../SVG/IconHeart/IconHeart';
+import IconCartShopping from '../../SVG/IconCartShopping/IconCartShopping';
 
 import styles from './DetailsProduct.module.css';
 
@@ -45,18 +47,18 @@ export default function DetailsProduct({ game }) {
         <div className={styles['icon-wrapper']}>
           <p className={styles['content-price']}>{game.price}$</p>
 
-          <div className={'icon-btn'}>
+          <div className={styles['action-icons']}>
             {/* <!-- User only --> */}
             {isAuthenticated && (
               <button
                 onClick={onClickAddFavorite}
                 className={`${styles['heart-icon']} btn`}
               >
-                <i className="fa-regular fa-heart"></i>
+                <IconHeart />
               </button>
             )}
             <button className={`${styles['shopping-icon']} btn`}>
-              <i className="fa-solid fa-cart-shopping"></i>
+              <IconCartShopping />
             </button>
           </div>
         </div>

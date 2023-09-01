@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { useFavoritesContext } from '../../contexts/GameFavoritesContext';
 import { textSubstring } from '../../utils/textSubstring';
+import IconHeart from '../SVG/IconHeart/IconHeart';
+import IconCartShopping from '../SVG/IconCartShopping/IconCartShopping';
 
 import styles from './ProductPs4.module.css';
 
@@ -62,20 +64,20 @@ export default function ProductPs4({
               <p className={styles['content-price']}>{price}$</p>
 
               {/* Action container */}
-              <div className={styles['icon-btn']}>
+              <div className={styles['action-icons']}>
                 {/* <!-- Authenticated users only --> */}
                 {isAuthenticated && (
                   <span
                     className={`${styles['heart-icon']} btn`}
                     onClick={(e) => onClickAddFavorite(e)}
                   >
-                    <i className="fa-regular fa-heart"></i>
+                    <IconHeart />
                   </span>
                 )}
 
                 {/* Shopping cart button */}
                 <span className={`${styles['shopping-icon']} btn`}>
-                  <i className="fa-solid fa-cart-shopping"></i>
+                  <IconCartShopping />
                 </span>
               </div>
             </div>

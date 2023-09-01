@@ -66,20 +66,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0px;
-}
-
-.heart-icon,
-.shopping-icon {
-  font-size: 32px;
-  color: var(--clr-abbey);
-}
-
-.heart-icon {
-  margin-right: 12px;
 }
 
 .content-price {
   font-size: 26px;
   color: var(--clr-firefly);
+}
+
+.action-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1;
+  font-size: 32px;
+  color: var(--clr-abbey);
 }
