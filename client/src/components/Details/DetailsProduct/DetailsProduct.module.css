@@ -36,17 +36,17 @@
   text-align: left;
 }
 
-.card-content .card-content-title {
-  font-family: 'Poppins', sans-serif;
+.card-content-title {
+  font-family: 'Barlow', sans-serif;
   font-size: 26px;
   margin-bottom: 24px;
 }
 
-.card-content .content-genre {
-  font-family: 'Poppins', sans-serif;
+.content-genre {
+  margin-bottom: 12px;
 }
 
-.card-content .content-desc {
+.content-desc {
   max-width: 70%;
   text-indent: 16px;
   margin-bottom: 12px;
