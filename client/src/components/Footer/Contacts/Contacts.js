@@ -11,19 +11,19 @@ export default function Contacts() {
     <div className={styles.contacts}>
       <h3 className={styles['contacts-title']}>Contacts</h3>
 
-      <div className={styles['contact-wrapper']}>
+      <div className={styles['contact-wrapper']} aria-label="Phone">
         <IconPhone />
         <p>0700 12 345 67</p>
       </div>
-      <div className={styles['contact-wrapper']}>
+      <div className={styles['contact-wrapper']} aria-label="Email">
         <IconEnvelope />
         <p>office@shopify.com</p>
       </div>
-      <div className={styles['contact-wrapper']}>
+      <div className={styles['contact-wrapper']} aria-label="Work time">
         <IconClock />
         <p>Monday - Friday: 09:00 - 18:00</p>
       </div>
-      <div className={styles['contact-wrapper']}>
+      <div className={styles['contact-wrapper']} aria-label="Address">
         <IconMapLocationDot />
         <p>15 Some Place Str.</p>
       </div>

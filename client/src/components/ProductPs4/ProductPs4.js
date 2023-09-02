@@ -69,13 +69,17 @@ export default function ProductPs4({
                   <span
                     className={`${styles['heart-icon']} btn`}
                     onClick={(e) => onClickAddFavorite(e)}
+                    aria-label="Add item to favorite"
                   >
                     <IconHeart />
                   </span>
                 )}
 
                 {/* Shopping cart button */}
-                <span className={`${styles['shopping-icon']} btn`}>
+                <span
+                  className={`${styles['shopping-icon']} btn`}
+                  aria-label="Shopping cart"
+                >
                   <IconCartShopping />
                 </span>
               </div>

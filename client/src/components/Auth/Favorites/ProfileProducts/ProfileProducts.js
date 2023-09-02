@@ -30,6 +30,7 @@ export default function ProfileProducts({ _id, imageUrl, price, title }) {
           <div
             onClick={(e) => onFavoriteRemoveClick(e, _id)}
             className={styles['remove-item-wrapper']}
+            aria-label="Remove item from favorites"
           >
             <IconTrashCan className={styles['remove-icon']} />
           </div>
@@ -53,6 +54,7 @@ export default function ProfileProducts({ _id, imageUrl, price, title }) {
                 <span
                   onClick={(e) => onCartShoppingClick(e, _id)}
                   className={`${styles['shopping-icon']} btn`}
+                  aria-label="Shopping cart"
                 >
                   <IconCartShopping />
                 </span>

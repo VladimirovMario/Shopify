@@ -52,11 +52,15 @@ export default function DetailsProduct({ game }) {
               <button
                 onClick={onClickAddFavorite}
                 className={`${styles['heart-icon']} btn`}
+                aria-label="Add item to favorite"
               >
                 <IconHeart />
               </button>
             )}
-            <button className={`${styles['shopping-icon']} btn`}>
+            <button
+              className={`${styles['shopping-icon']} btn`}
+              aria-label="Shopping cart"
+            >
               <IconCartShopping />
             </button>
           </div>

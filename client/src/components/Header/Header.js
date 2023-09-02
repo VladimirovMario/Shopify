@@ -108,7 +108,7 @@ export default function Header() {
           <ul className={styles['dropdown-nav']}>
             <li className={styles['main-nav-icon']}>
               <Link to={'/'}>
-                <IconBars />
+                <IconBars className={styles['icon-bars']} />
                 <span className={styles['categories-link']}>Categories</span>
               </Link>
             </li>
