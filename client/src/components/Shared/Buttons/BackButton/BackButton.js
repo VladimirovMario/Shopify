@@ -1,3 +1,4 @@
+import { IconArrowLeft } from '../../../SVG/index';
 import styles from './BackButton.module.css';
 
 export default function BackButton({ handleBackClick, ariaLabelText }) {
@@ -8,7 +9,7 @@ export default function BackButton({ handleBackClick, ariaLabelText }) {
       aria-label={ariaLabelText}
     >
       <div className={styles['back-btn-wrapper']}>
-        <i className={`${styles['back-icon']} fa-solid fa-arrow-left`}></i>
+        <IconArrowLeft className={styles['back-icon']} />
       </div>
     </button>
   );

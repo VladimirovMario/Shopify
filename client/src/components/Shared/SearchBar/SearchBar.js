@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useGameContext } from '../../../contexts/GameContext';
 import { searchGames } from '../../../services/gameService';
 import DropDownBox from './DropDownBox';
+import { IconMagnifyingGlass } from '../../SVG/index';
 
 import styles from './SearchBar.module.css';
 
@@ -97,9 +98,7 @@ export default function SearchBar() {
           type="submit"
           aria-label="Search"
         >
-          <div className={styles['search-icon']}>
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </div>
+          <IconMagnifyingGlass className={styles['search-icon']} />
         </button>
       </form>
 

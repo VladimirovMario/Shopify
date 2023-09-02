@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSlidesContext } from '../../../../contexts/PromotionSlidesContext';
+import {
+  IconChevronLeft,
+  IconChevronRight,
+  IconCircle,
+} from '../../../SVG/index';
 import styles from './ImageSlider.module.css';
 
 // TO DO fix the problem with responsive design
@@ -81,14 +86,14 @@ export default function ImageSlider({ slides }) {
         aria-label="Go to previous promotion slide"
         onClick={goToPrevious}
       >
-        <i className="fa-solid fa-chevron-left"></i>
+        <IconChevronLeft />
       </button>
       <button
         className={styles['right-arrow']}
         aria-label="Go to next promotion slide"
         onClick={goToNext}
       >
-        <i className="fa-solid fa-chevron-right"></i>
+        <IconChevronRight />
       </button>
 
       {/* Dots section */}
@@ -100,7 +105,7 @@ export default function ImageSlider({ slides }) {
             onClick={() => goToSlide(slideIndex)}
             aria-label={`Go to ${slide.title} promotion slide`}
           >
-            <i className="fa-regular fa-circle"></i>
+            <IconCircle />
           </button>
         ))}
       </div>

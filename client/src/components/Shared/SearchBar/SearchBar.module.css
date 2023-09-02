@@ -44,12 +44,12 @@
   opacity: 0.5;
 }
 
-.search-icon i {
+.search-icon {
   line-height: 1;
   color: var(--clr-malibu);
 }
 
-.search-btn:hover .search-icon i {
+.search-btn:hover .search-icon {
   color: var(--clr-firefly);
 }
 

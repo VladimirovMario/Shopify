@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
-import styles from './Header.module.css';
 import SearchBar from '../Shared/SearchBar/SearchBar';
+import { IconBars } from '../SVG/index';
 import UserFavorites from './UserFavorites.js/UserFavorites';
+
+import styles from './Header.module.css';
 
 export default function Header() {
   const { isAuthenticated } = useAuthContext();
@@ -106,7 +108,7 @@ export default function Header() {
           <ul className={styles['dropdown-nav']}>
             <li className={styles['main-nav-icon']}>
               <Link to={'/'}>
-                <i className="fa-solid fa-bars"></i>
+                <IconBars />
                 <span className={styles['categories-link']}>Categories</span>
               </Link>
             </li>

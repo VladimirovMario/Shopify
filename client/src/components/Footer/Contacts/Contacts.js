@@ -1,3 +1,9 @@
+import {
+  IconPhone,
+  IconEnvelope,
+  IconClock,
+  IconMapLocationDot,
+} from '../../SVG/index';
 import styles from './Contacts.module.css';
 
 export default function Contacts() {
@@ -6,19 +12,19 @@ export default function Contacts() {
       <h3 className={styles['contacts-title']}>Contacts</h3>
 
       <div className={styles['contact-wrapper']}>
-        <i className="fa-solid fa-phone"></i>
-        <p>0700 12 345</p>
+        <IconPhone />
+        <p>0700 12 345 67</p>
       </div>
       <div className={styles['contact-wrapper']}>
-        <i className="fa-solid fa-envelope"></i>
+        <IconEnvelope />
         <p>office@shopify.com</p>
       </div>
       <div className={styles['contact-wrapper']}>
-        <i className="fa-solid fa-clock"></i>
+        <IconClock />
         <p>Monday - Friday: 09:00 - 18:00</p>
       </div>
       <div className={styles['contact-wrapper']}>
-        <i className="fa-solid fa-map-location-dot"></i>
+        <IconMapLocationDot />
         <p>15 Some Place Str.</p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useFavoritesContext } from '../../../../contexts/GameFavoritesContext';
 import { textSubstring } from '../../../../utils/textSubstring';
+import { IconCartShopping, IconTrashCan } from '../../../SVG/index';
 
 import styles from './ProfileProduct.module.css';
 
@@ -30,9 +31,7 @@ export default function ProfileProducts({ _id, imageUrl, price, title }) {
             onClick={(e) => onFavoriteRemoveClick(e, _id)}
             className={styles['remove-item-wrapper']}
           >
-            <i
-              className={`${styles['remove-icon']} fa-regular fa-trash-can`}
-            ></i>
+            <IconTrashCan className={styles['remove-icon']} />
           </div>
 
           <div className={styles['thumbnail']}>
@@ -55,7 +54,7 @@ export default function ProfileProducts({ _id, imageUrl, price, title }) {
                   onClick={(e) => onCartShoppingClick(e, _id)}
                   className={`${styles['shopping-icon']} btn`}
                 >
-                  <i className="fa-solid fa-cart-shopping"></i>
+                  <IconCartShopping />
                 </span>
               </div>
             </div>

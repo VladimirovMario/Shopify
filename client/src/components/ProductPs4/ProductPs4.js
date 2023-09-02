@@ -2,8 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { useFavoritesContext } from '../../contexts/GameFavoritesContext';
 import { textSubstring } from '../../utils/textSubstring';
-import IconHeart from '../SVG/IconHeart/IconHeart';
-import IconCartShopping from '../SVG/IconCartShopping/IconCartShopping';
+import { IconHeart, IconCartShopping } from '../SVG/index';
 
 import styles from './ProductPs4.module.css';
 
