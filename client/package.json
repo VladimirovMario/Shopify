@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy:hosting": "firebase deploy --only hosting",
-    "deploy": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build && firebase deploy --only hosting"
+    "deploy": "react-scripts build && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": [
