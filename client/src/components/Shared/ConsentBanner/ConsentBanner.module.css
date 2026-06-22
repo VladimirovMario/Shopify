@@ -1,0 +1,32 @@
+.container {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 99;
+  width: 100%;
+  border-top: 1px solid var(--clr-malibu);
+  background-color: rgba(256, 256, 256, 0.9);
+}
+
+.content {
+  max-width: 1200px;
+  padding: 12px 10px;
+  padding: 18px;
+  margin: 0 auto;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin-block-end: 18px;
+}
+
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}

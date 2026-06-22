@@ -9,6 +9,29 @@
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    const consentOptions = localStorage.getItem('consentMode');
+    if (consentOptions === null) {
+      gtag('consent', 'default',
+        {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+          functionality_storage: 'denied',
+          personalization_storage: 'denied',
+          security_storage: 'denied',
+        }
+      )
+    } else {
+      gtag('consent', 'default', JSON.parse(consentOptions))
+    }
+  </script>
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({

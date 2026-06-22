@@ -21,6 +21,7 @@ import { GameProvider } from './contexts/GameContext';
 import { GameFavoritesProvider } from './contexts/GameFavoritesContext';
 import { RouteGuard } from './components/common/RouteGuard';
 import { LoggedUserGuard } from './components/common/LoggedUserGuard';
+import ConsentBanner from './components/Shared/ConsentBanner/ConsentBanner';
 
 import './App.css';
 
@@ -35,6 +36,7 @@ function App() {
       <GameProvider>
         <GameFavoritesProvider>
           <Header />
+          <ConsentBanner />
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
