@@ -2,22 +2,28 @@ import { useState } from 'react';
 import styles from './ConsentBanner.module.css';
 
 export default function ConsentBanner() {
-  const [isBannerVisible, setIsBannerVisible] = useState(false);
+  let initialBannerState = false;
+  const consentOptions = localStorage.getItem('consentMode');
+
+  if (consentOptions === null) {
+    initialBannerState = true;
+  }
+
+  const [isBannerVisible, setIsBannerVisible] = useState(initialBannerState);
 
   function gtag() {
     window.dataLayer.push(arguments);
   }
 
   function chooseConsent(choice) {
-    const consent = choice === 'accept' ? 'granted' : 'denied';
     return {
-      ad_storage: consent,
-      ad_user_data: consent,
-      ad_personalization: consent,
-      analytics_storage: consent,
-      functionality_storage: consent,
-      personalization_storage: consent,
-      security_storage: consent,
+      ad_storage: choice,
+      ad_user_data: choice,
+      ad_personalization: choice,
+      analytics_storage: choice,
+      functionality_storage: choice,
+      personalization_storage: choice,
+      security_storage: choice,
     };
   }
 
@@ -29,19 +35,13 @@ export default function ConsentBanner() {
 
   // Send consent updates when users interact with consent banner
   function allConsentGranted() {
-    const consentOptions = chooseConsent('accept');
+    const consentOptions = chooseConsent('granted');
     updateConsent(consentOptions);
   }
 
   function allConsentDenied() {
-    const consentOptions = chooseConsent('reject');
+    const consentOptions = chooseConsent('denied');
     updateConsent(consentOptions);
-  }
-
-  const consentOptions = localStorage.getItem('consentMode');
-
-  if (consentOptions === null && !isBannerVisible) {
-    setIsBannerVisible(true);
   }
 
   let content = <></>;
